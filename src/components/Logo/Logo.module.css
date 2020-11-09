@@ -1,0 +1,14 @@
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo__svg {
+  @util size(61px, 35px);
+  margin-right: 14px;
+}
+
+.logo__name {
+  font-size: 27px;
+  font-weight: 500;
+}
