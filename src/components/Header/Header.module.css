@@ -30,3 +30,7 @@
     margin-right: 0;
   }
 }
+
+.header__logo {
+  display: block;
+}

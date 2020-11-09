@@ -28,3 +28,7 @@ body {
   padding: 0 20px;
   @util center-block;
 }
+
+.main {
+  flex: 1;
+}

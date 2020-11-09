@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Logo } from '@/components/Logo';
 import { Nav } from '@/components/Nav';
 import { Button } from '@/components/Button';
@@ -13,9 +14,11 @@ const Header = () => {
       <div className="container">
         <div className={styles.header__container}>
           <div className={styles.header__left}>
-            <div className={styles.header__logo}>
-              <Logo />
-            </div>
+            <Link href="/">
+              <a className={styles.header__logo}>
+                <Logo />
+              </a>
+            </Link>
             <div className={styles.header__lang}></div>
           </div>
           <div className={styles.header__nav}>

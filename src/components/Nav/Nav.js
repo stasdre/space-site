@@ -1,11 +1,12 @@
+import Link from 'next/link';
 import styles from './Nav.module.css';
 
 const menu = [
-  { name: 'Услуги', link: '#' },
-  { name: 'Работы', link: '#' },
-  { name: 'Агенция', link: '#' },
-  { name: 'Блог', link: '#' },
-  { name: 'Контакты', link: '#' },
+  { name: 'Услуги', link: '/services' },
+  { name: 'Работы', link: '/works' },
+  { name: 'Агенция', link: '/agency' },
+  { name: 'Блог', link: '/blog' },
+  { name: 'Контакты', link: '/contacts' },
 ];
 
 const Nav = () => (
@@ -13,9 +14,9 @@ const Nav = () => (
     <ul className={styles.nav__list}>
       {menu.map((item, index) => (
         <li key={index} className={styles.nav__item}>
-          <a className={styles.nav__link} href={item.link}>
-            {item.name}
-          </a>
+          <Link href={item.link}>
+            <a className={styles.nav__link}>{item.name}</a>
+          </Link>
         </li>
       ))}
     </ul>
