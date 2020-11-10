@@ -1,0 +1,12 @@
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #737373;
+  border-radius: 50%;
+}
+
+.icon__small {
+  width: 22px;
+  @util size(22px);
+}

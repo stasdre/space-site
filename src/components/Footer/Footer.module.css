@@ -1,0 +1,54 @@
+.footer {
+  & .footer__top {
+    border-top: 1px solid #4a4848;
+    border-bottom: 1px solid #4a4848;
+    padding: 30px 0;
+  }
+
+  & .footer__content {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #4a4848;
+    border-bottom: 1px solid #4a4848;
+    padding: 36px 0 22px 0;
+  }
+}
+
+.footer__contentLeft {
+  display: flex;
+}
+.footer__address {
+  margin-right: 35px;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #4a4848;
+  padding: 25px 0 19px 0;
+}
+
+.footer__copyright {
+  font-size: 14px;
+  line-height: 18px;
+  color: #cacaca;
+}
+
+.footer__terms {
+  display: flex;
+  align-items: center;
+}
+
+.footer__termsItem {
+  margin-right: 39px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.footer__termsLink {
+  font-size: 14px;
+  line-height: 18px;
+  color: #cacaca;
+}

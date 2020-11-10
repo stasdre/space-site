@@ -1,0 +1,14 @@
+.address__title {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21px;
+  color: #cacaca;
+  margin-bottom: 20px;
+}
+
+.address__text {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+  color: #ffffff;
+}

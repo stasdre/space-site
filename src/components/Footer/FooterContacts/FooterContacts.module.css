@@ -1,0 +1,33 @@
+.footerContacts {
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  & .FooterContacts__title {
+    font-size: 16px;
+    line-height: 21px;
+    color: #cacaca;
+    margin-bottom: 20px;
+  }
+  & .FooterContacts__phone {
+    font-size: 18px;
+    line-height: 23px;
+    color: #ffffff;
+    margin-bottom: 13px;
+  }
+  & .FooterContacts__email {
+    font-size: 18px;
+    line-height: 23px;
+    color: #ffffff;
+    margin-bottom: 17px;
+  }
+}
+
+.FooterContacts__icons {
+  display: flex;
+}
+.FooterContacts__item {
+  margin-right: 12px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
