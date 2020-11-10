@@ -31,3 +31,8 @@
 .main__works {
   margin-bottom: 150px;
 }
+
+.main__reviews {
+  margin-bottom: 150px;
+  border-bottom: 1px solid #4a4848;
+}

@@ -1,0 +1,58 @@
+.reviews {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 150px;
+  border-bottom: 1px solid #4a4848;
+}
+.reviews__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 275px;
+  grid-row-gap: 95px;
+  grid-auto-rows: auto;
+  align-items: center;
+  margin-bottom: 165px;
+}
+
+.reviews__item {
+  &:nth-child(2n + 2):not(:nth-child(2)) {
+    transform: translateY(110px);
+  }
+}
+
+.review__link {
+  position: relative;
+  display: block;
+  margin-bottom: 26px;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @util size(69px);
+    background: transparent url('../../assets/icons/play-btn.svg');
+  }
+}
+
+.review__info {
+  display: flex;
+}
+
+.review__time {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21px;
+  color: #cacaca;
+  margin-right: 80px;
+}
+
+.review__title {
+  font-size: 26px;
+  line-height: 34px;
+  color: #ffffff;
+}
+
+.review__button {
+  align-self: center;
+}

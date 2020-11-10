@@ -3,8 +3,9 @@ import { HeadSection } from '@/components/HeadSection';
 import { ShortText } from '@/components/ShortText';
 import styles from './Index.module.css';
 import { Works } from '@/components/Works';
+import { Reviews } from '@/components/Reviews';
 
-const Home = ({ works }) => {
+const Home = ({ works, reviews }) => {
   return (
     <>
       <HeadSection>
@@ -24,6 +25,9 @@ const Home = ({ works }) => {
         <div className={styles.main__works}>
           <Works works={works} />
         </div>
+        <div className={styles.main__reviews}>
+          <Reviews reviews={reviews} />
+        </div>
       </div>
     </>
   );
@@ -37,9 +41,19 @@ export async function getStaticProps() {
     { id: 4, title: 'Novias', year: '2020' },
     { id: 5, title: 'Converse', year: '2020' },
   ];
+
+  const reviews = [
+    { id: 1, title: 'Отзыв от Ростислава Валихновского', time: '0:52', img: 'review_1.jpg' },
+    { id: 2, title: 'Отзыв от Ростислава Валихновского', time: '6:11', img: 'review_2.jpg' },
+    { id: 3, title: 'Отзыв от Ростислава Валихновского', time: '1:52', img: 'review_3.jpg' },
+  ];
+
+  reviews.splice(1, 0, { id: 'rating' });
+
   return {
     props: {
       works,
+      reviews,
     },
   };
 }
