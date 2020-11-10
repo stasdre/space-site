@@ -2,8 +2,9 @@ import Image from 'next/image';
 import { HeadSection } from '@/components/HeadSection';
 import { ShortText } from '@/components/ShortText';
 import styles from './Index.module.css';
+import { Works } from '@/components/Works';
 
-export default function Home() {
+const Home = ({ works }) => {
   return (
     <>
       <HeadSection>
@@ -20,7 +21,27 @@ export default function Home() {
             необходимые функции для высокой эффективности и результативности ведения вашего бизнеса.
           </ShortText>
         </div>
+        <div className={styles.main__works}>
+          <Works works={works} />
+        </div>
       </div>
     </>
   );
+};
+
+export async function getStaticProps() {
+  const works = [
+    { id: 1, title: 'Zlata Ognevich', year: '2020' },
+    { id: 2, title: 'Laskarda', year: '2020' },
+    { id: 3, title: 'EvaSad', year: '2020' },
+    { id: 4, title: 'Novias', year: '2020' },
+    { id: 5, title: 'Converse', year: '2020' },
+  ];
+  return {
+    props: {
+      works,
+    },
+  };
 }
+
+export default Home;

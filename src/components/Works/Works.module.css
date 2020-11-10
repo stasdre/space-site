@@ -1,0 +1,38 @@
+.works {
+  display: flex;
+  flex-direction: column;
+}
+.works__list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.works__item {
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  padding: 26px 0;
+}
+
+.works__link {
+  display: flex;
+}
+
+.works__title {
+  font-weight: 300;
+  font-size: 72px;
+  line-height: 94px;
+  color: #ffffff;
+  margin-right: 30px;
+}
+
+.works__year {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21px;
+  color: #cacaca;
+}
+
+.works__button {
+  align-self: center;
+}
