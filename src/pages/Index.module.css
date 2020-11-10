@@ -16,3 +16,14 @@
   line-height: 125px;
   color: #ffffff;
 }
+
+.main__container {
+  padding: 0 120px;
+}
+
+.main__text {
+  padding-top: 160px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #4a4848;
+  margin-bottom: 150px;
+}

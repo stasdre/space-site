@@ -1,0 +1,8 @@
+.button {
+  @util size(152px);
+  border-radius: 50%;
+  background: #4061f9;
+  color: #ffffff;
+  font-size: 21px;
+  line-height: 27px;
+}

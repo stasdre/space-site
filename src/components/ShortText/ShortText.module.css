@@ -1,0 +1,20 @@
+.text {
+  position: relative;
+  font-size: 41px;
+  line-height: 53px;
+  color: #ffffff;
+}
+
+.text__name {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21px;
+  color: #cacaca;
+  margin-right: 55px;
+}
+
+.text__button {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20%;
+}
