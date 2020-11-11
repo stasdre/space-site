@@ -5,4 +5,8 @@
   color: #ffffff;
   font-size: 21px;
   line-height: 27px;
+  &.gray {
+    background: #737373;
+    color: #fff;
+  }
 }
