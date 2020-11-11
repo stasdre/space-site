@@ -5,6 +5,8 @@ import styles from './Index.module.css';
 import { Works } from '@/components/Works';
 import { Reviews } from '@/components/Reviews';
 import { Collapse } from '@/components/Collapse';
+import { FooterContacts } from '@/components/Footer';
+import { ContactForm } from '@/components/ContactForm';
 
 const Home = ({ works, reviews, faq }) => {
   return (
@@ -31,6 +33,14 @@ const Home = ({ works, reviews, faq }) => {
         </div>
         <div className={styles.main__collapse}>
           <Collapse items={faq} />
+        </div>
+        <div className={styles.main__contacts}>
+          <div className={styles.main__contactsLeft}>
+            <FooterContacts />
+          </div>
+          <div className={styles.main__contactsRight}>
+            <ContactForm />
+          </div>
         </div>
       </div>
     </>

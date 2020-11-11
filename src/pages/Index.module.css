@@ -40,3 +40,16 @@
 .main__collapse {
   margin-bottom: 150px;
 }
+
+.main__contacts {
+  display: flex;
+  margin-bottom: 150px;
+}
+
+.main__contactsLeft {
+  width: 40%;
+}
+
+.main__contactsRight {
+  width: 60%;
+}

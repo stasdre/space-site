@@ -1,0 +1,45 @@
+.contacts__title {
+  font-weight: 300;
+  font-size: 41px;
+  line-height: 53px;
+  color: #ffffff;
+  margin-bottom: 28px;
+}
+
+.contacts__services {
+  margin-bottom: 70px;
+}
+
+.contacts__servicesTitle {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21px;
+  color: #cacaca;
+  margin-bottom: 24px;
+}
+
+.contacts__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contacts__item {
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.contacts__row {
+  display: flex;
+  margin-bottom: 35px;
+}
+
+.contacts__col {
+  flex: 1;
+  margin-right: 30px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
