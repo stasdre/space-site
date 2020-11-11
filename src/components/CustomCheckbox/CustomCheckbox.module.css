@@ -1,0 +1,26 @@
+.checkbox {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  & input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    &:checked ~ .checkbox__name {
+      background: #fff;
+      color: #000;
+    }
+  }
+}
+
+.checkbox__name {
+  border: 1px solid #ffffff;
+  border-radius: 42px;
+  padding: 12px 37px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  transition: 0.3s;
+}
