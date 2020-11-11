@@ -5,8 +5,29 @@
   color: #ffffff;
   font-size: 21px;
   line-height: 27px;
+  transition: all 0.2s;
+  position: relative;
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+    border-radius: 50%;
+    background: #4061f9;
+  }
   &.gray {
     background: #737373;
     color: #fff;
+  }
+  &:hover {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
   }
 }
