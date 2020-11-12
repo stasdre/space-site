@@ -2,6 +2,8 @@
 @import './utils/breakpoints.css';
 @import './utils/reset.css';
 
+@import './stars.css';
+
 body {
   background: #111010;
   color: #fff;
