@@ -1,3 +1,5 @@
+@import '../../assets/css/utils/breakpoints.css';
+
 .text {
   position: relative;
   font-size: 27px;

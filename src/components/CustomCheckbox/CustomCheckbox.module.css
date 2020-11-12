@@ -2,7 +2,7 @@
   display: block;
   position: relative;
   cursor: pointer;
-  & input {
+  & .checkbox__input {
     position: absolute;
     opacity: 0;
     cursor: pointer;

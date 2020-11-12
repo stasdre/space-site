@@ -1,3 +1,5 @@
+@import '../../assets/css/utils/breakpoints.css';
+
 .logo {
   display: flex;
   align-items: center;

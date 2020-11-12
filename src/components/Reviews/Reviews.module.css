@@ -1,3 +1,5 @@
+@import '../../assets/css/utils/breakpoints.css';
+
 .reviews {
   display: flex;
   flex-direction: column;
