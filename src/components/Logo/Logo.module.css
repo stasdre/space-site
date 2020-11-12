@@ -5,11 +5,17 @@
 
 .logo__svg {
   @util size(61px, 35px);
-  margin-right: 14px;
+  @media (--extra-large) {
+    margin-right: 14px;
+  }
 }
 
 .logo__name {
+  display: none;
   font-size: 27px;
   font-weight: 500;
   color: #fff;
+  @media (--extra-large) {
+    display: block;
+  }
 }

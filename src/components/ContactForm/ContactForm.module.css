@@ -7,7 +7,10 @@
 }
 
 .contacts__services {
-  margin-bottom: 70px;
+  margin-bottom: 30px;
+  @media (--extra-large) {
+    margin-bottom: 70px;
+  }
 }
 
 .contacts__servicesTitle {
@@ -22,24 +25,41 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  @media (--extra-large) {
+    flex-wrap: nowrap;
+  }
 }
 
 .contacts__item {
-  margin-right: 10px;
+  width: 50%;
+  margin-bottom: 30px;
   &:last-child {
     margin-right: 0;
+  }
+  @media (--extra-large) {
+    margin-right: 10px;
+    width: initial;
   }
 }
 
 .contacts__row {
   display: flex;
-  margin-bottom: 35px;
+  flex-wrap: wrap;
+  @media (--extra-large) {
+    flex-wrap: nowrap;
+    margin-bottom: 35px;
+  }
 }
 
 .contacts__col {
-  flex: 1;
-  margin-right: 30px;
+  width: 100%;
+  margin-bottom: 30px;
   &:last-child {
     margin-right: 0;
+  }
+  @media (--extra-large) {
+    flex: 1;
+    margin-right: 30px;
   }
 }

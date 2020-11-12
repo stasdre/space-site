@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Logo } from '@/components/Logo';
 import { Nav } from '@/components/Nav';
 import { Button } from '@/components/Button';
+import { BurgerNav } from '@/components/BurgerNav';
 import PhoneIcon from '../../assets/img/phone.svg';
 import PlayIcon from '../../assets/img/play.svg';
 import styles from './Header.module.css';
@@ -34,7 +35,7 @@ const Header = () => {
                   <PhoneIcon />
                 </Button>
               </li>
-              <li className={styles.header__controls_item}>
+              <li className={`${styles.header__controls_item} ${styles.header__play}`}>
                 <Button round type="base">
                   <PlayIcon />
                 </Button>
@@ -42,6 +43,9 @@ const Header = () => {
             </ul>
             <div className={styles.header__btn}>
               <Button type="base">Нанять нас</Button>
+            </div>
+            <div className={styles.header__burger}>
+              <BurgerNav />
             </div>
           </div>
         </div>

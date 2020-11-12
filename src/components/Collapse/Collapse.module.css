@@ -1,9 +1,12 @@
 .collapse {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-column-gap: 30px;
   grid-auto-rows: auto;
   align-items: flex-start;
+  @media (--medium) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .collapse__col {
@@ -29,11 +32,20 @@
     background: transparent url('../../assets/icons/arrow.svg');
     transition: transform 0.3s;
   }
+  font-size: 19px;
+  line-height: 25px;
+  @media (--large) {
+    font-size: 26px;
+    line-height: 34px;
+  }
 }
 
 .collapse__contant {
   padding-top: 20px;
-  font-size: 20px;
+  font-size: 16px;
+  @media (--large) {
+    font-size: 20px;
+  }
 }
 
 .collapse__item_active {

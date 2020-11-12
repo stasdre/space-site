@@ -1,5 +1,5 @@
 .header {
-  margin-bottom: 80px;
+  margin-bottom: 34px;
 }
 
 .header__container {
@@ -22,7 +22,9 @@
 }
 
 .header__controls {
-  margin-right: 29px;
+  @media (--medium) {
+    margin-right: 29px;
+  }
 }
 
 .header__controls_item {
@@ -34,4 +36,35 @@
 
 .header__logo {
   display: block;
+}
+
+.header__lang {
+  display: none;
+}
+
+.header__nav {
+  display: none;
+  @media (--medium) {
+    display: block;
+  }
+}
+
+.header__btn {
+  display: none;
+  @media (--extra-large) {
+    display: block;
+  }
+}
+
+.header__play {
+  display: none;
+  @media (--medium) {
+    display: block;
+  }
+}
+
+.header__burger {
+  @media (--medium) {
+    display: none;
+  }
 }

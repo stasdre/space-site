@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import { HeadSection } from '@/components/HeadSection';
 import { ShortText } from '@/components/ShortText';
-import styles from './Index.module.css';
 import { Works } from '@/components/Works';
 import { Reviews } from '@/components/Reviews';
 import { Collapse } from '@/components/Collapse';
 import { FooterContacts } from '@/components/Footer';
 import { ContactForm } from '@/components/ContactForm';
+import styles from './Index.module.css';
 
 const Home = ({ works, reviews, faq }) => {
   return (
@@ -14,7 +14,9 @@ const Home = ({ works, reviews, faq }) => {
       <HeadSection>
         <div className={styles.main}>
           <h1 className={styles.main__title}>Создание cайтов от Google партнеров</h1>
-          <Image src="/main.jpg" width="760" height="426" alt="" />
+          <div className={styles.main__slider}>
+            <Image src="/main.jpg" width="760" height="426" alt="" />
+          </div>
         </div>
       </HeadSection>
       <div className={`container ${styles.main__container}`}>

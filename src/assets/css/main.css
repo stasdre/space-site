@@ -19,12 +19,15 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding-top: 33px;
+  padding-top: 13px;
+  @media (--medium) {
+    padding-top: 33px;
+  }
 }
 
 .container {
   max-width: 1440px;
-  width: 100%;
+  /* width: 100%; */
   padding: 0 20px;
   @util center-block;
 }

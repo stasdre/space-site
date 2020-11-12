@@ -5,7 +5,13 @@
   border: 5px solid #ffffff;
   text-align: center;
   font-weight: 300;
-  height: 600px;
+  height: 285px;
+  @media (--medium) {
+    height: 400px;
+  }
+  @media (--extra-large) {
+    height: 600px;
+  }
 }
 
 .rating__count {

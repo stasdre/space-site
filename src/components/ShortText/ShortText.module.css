@@ -1,8 +1,12 @@
 .text {
   position: relative;
-  font-size: 41px;
-  line-height: 53px;
+  font-size: 27px;
+  line-height: 35px;
   color: #ffffff;
+  @media (--large) {
+    font-size: 41px;
+    line-height: 53px;
+  }
 }
 
 .text__name {
@@ -10,11 +14,15 @@
   font-size: 16px;
   line-height: 21px;
   color: #cacaca;
-  margin-right: 55px;
+  margin-right: 22px;
+  @media (--large) {
+    margin-right: 55px;
+  }
 }
 
 .text__button {
   display: flex;
   justify-content: flex-end;
   margin-right: 20%;
+  padding-top: 33px;
 }

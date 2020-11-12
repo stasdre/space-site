@@ -1,0 +1,16 @@
+.burger {
+  font-size: 0;
+  display: flex;
+  @util size(31px,15px);
+  background: transparent;
+  flex-direction: column;
+  justify-content: space-around;
+  &::before,
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background: #ffffff;
+  }
+}
