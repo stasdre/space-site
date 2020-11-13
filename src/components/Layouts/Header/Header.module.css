@@ -1,5 +1,8 @@
 .header {
   margin-bottom: 34px;
+  @media (--large) {
+    margin-bottom: 84px;
+  }
 }
 
 .header__container {
