@@ -20,25 +20,29 @@ const Footer = () => (
           <Nav />
         </div>
       </div>
-      <div className={styles.footer__bottom}>
-        <div className={styles.footer__copyright}>©2020 Space-Site</div>
-        <ul className={styles.footer__terms}>
-          <li className={styles.footer__termsItem}>
-            <a href="#" className={styles.footer__termsLink}>
-              Terms & Conditions
-            </a>
-          </li>
-          <li className={styles.footer__termsItem}>
-            <a href="#" className={styles.footer__termsLink}>
-              Privacy Policy
-            </a>
-          </li>
-          <li className={styles.footer__termsItem}>
-            <a href="#" className={styles.footer__termsLink}>
-              Sitemap
-            </a>
-          </li>
-        </ul>
+    </div>
+    <div className={styles.footer__bottom_container}>
+      <div className="container">
+        <div className={styles.footer__bottom}>
+          <div className={styles.footer__copyright}>© 2015-2020 Space-Site</div>
+          <ul className={styles.footer__terms}>
+            <li className={styles.footer__termsItem}>
+              <a href="#" className={styles.footer__termsLink}>
+                Terms & Conditions
+              </a>
+            </li>
+            <li className={styles.footer__termsItem}>
+              <a href="#" className={styles.footer__termsLink}>
+                Privacy Policy
+              </a>
+            </li>
+            <li className={styles.footer__termsItem}>
+              <a href="#" className={styles.footer__termsLink}>
+                Sitemap
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </footer>

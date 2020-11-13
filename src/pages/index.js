@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import { HeadSection } from '@/components/Layouts';
+import { HeadSection, Section } from '@/components/Layouts';
 import {
   Contacts,
   ShortText,
@@ -7,38 +6,44 @@ import {
   Reviews,
   Collapse,
   ContactForm,
+  Services,
+  Clients,
 } from '@/components/Sections';
+
+import { Head, SpaceSite } from '@/components/Pages/Home';
+
 import styles from './Index.module.css';
 
-const Home = ({ works, reviews, faq }) => {
+const Home = ({ title, spaceData, about, services, works, reviews, clients, faq }) => {
   return (
     <>
       <HeadSection>
-        <div className={styles.main}>
-          <h1 className={styles.main__title}>Создание cайтов от Google партнеров</h1>
-          <div className={styles.main__slider}>
-            <Image src="/main.jpg" width="760" height="426" alt="" />
-          </div>
-        </div>
+        <Head title={title} />
       </HeadSection>
       <div className={`container ${styles.main__container}`}>
+        <div className={styles.main__space}>
+          <SpaceSite data={spaceData} />
+        </div>
         <div className={styles.main__text}>
-          <ShortText name="Агенция">
-            Занимаемся разработкой сайтов для бизнеса с 2013 года. За это время подобрали
-            квалифицированных специалистов, которые готовы помочь клиентам в создании
-            сайта любой сложности, а также внедрить в него все необходимые функции для
-            высокой эффективности и результативности ведения вашего бизнеса.
+          <ShortText name={about.title} link={about.link}>
+            {about.desc}
           </ShortText>
         </div>
-        <div className={styles.main__works}>
+        <Section className={styles.main__section} title="Услуги">
+          <Services services={services} />
+        </Section>
+        <Section className={styles.main__section} title="Работы">
           <Works works={works} />
-        </div>
-        <div className={styles.main__reviews}>
+        </Section>
+        <Section className={styles.main__section} title="Отзывы">
           <Reviews reviews={reviews} />
-        </div>
-        <div className={styles.main__collapse}>
+        </Section>
+        <Section className={styles.main__section} title="Наши клиенты">
+          <Clients clients={clients} />
+        </Section>
+        <Section className={styles.main__section} title="Важно!">
           <Collapse items={faq} />
-        </div>
+        </Section>
         <div className={styles.main__contacts}>
           <div className={styles.main__contactsLeft}>
             <Contacts />
@@ -53,6 +58,30 @@ const Home = ({ works, reviews, faq }) => {
 };
 
 export async function getStaticProps() {
+  const title = '<span>Создание cайтов</span><br><span>от Google партнеров</span>';
+
+  const spaceData = {
+    title: 'Space Site — разработка сайтов от 690$',
+    desc:
+      'Создание сайтов — это необходимость для любого бизнеса в настоящее время. С помощью созданного сайта можно быстро продать 99% видов товаров и услуг. Создание сайта поможет получить горячих клиентов из поисковых систем и стабилизировать любой вид бизнеса.',
+  };
+
+  const about = {
+    title: 'Агенция',
+    desc:
+      'Занимаемся разработкой сайтов для бизнеса с 2013 года. За это время подобрали квалифицированных специалистов, которые готовы помочь клиентам в создании сайта любой сложности, а также внедрить в него все необходимые функции для высокой эффективности и результативности ведения вашего бизнеса.',
+    link: '#',
+  };
+
+  const services = [
+    { id: 1, title: 'Создание сайтов', link: '#' },
+    { id: 2, title: 'Верстка сайтов', link: '#' },
+    { id: 3, title: 'Разработка на CMS', link: '#' },
+    { id: 4, title: 'Веб-дизайн', link: '#' },
+    { id: 5, title: 'Поддерка сайта', link: '#' },
+    { id: 6, title: 'Мобильное приложение', link: '#' },
+  ];
+
   const works = [
     { id: 1, title: 'Zlata Ognevich', year: '2020' },
     { id: 2, title: 'Laskarda', year: '2020' },
@@ -79,6 +108,47 @@ export async function getStaticProps() {
       title: 'Отзыв от Ростислава Валихновского',
       time: '1:52',
       img: 'review_3.jpg',
+    },
+    {
+      id: 4,
+      title: 'Отзыв от Ростислава Валихновского',
+      time: '1:52',
+      img: 'review_4.jpg',
+    },
+  ];
+
+  const clients = [
+    {
+      id: 1,
+      img: 'client_1.jpg',
+    },
+    {
+      id: 2,
+      img: 'client_1.jpg',
+    },
+    {
+      id: 3,
+      img: 'client_1.jpg',
+    },
+    {
+      id: 4,
+      img: 'client_1.jpg',
+    },
+    {
+      id: 5,
+      img: 'client_1.jpg',
+    },
+    {
+      id: 6,
+      img: 'client_1.jpg',
+    },
+    {
+      id: 7,
+      img: 'client_1.jpg',
+    },
+    {
+      id: 8,
+      img: 'client_1.jpg',
     },
   ];
 
@@ -133,12 +203,15 @@ export async function getStaticProps() {
     },
   ];
 
-  reviews.splice(1, 0, { id: 'rating' });
-
   return {
     props: {
+      title,
+      spaceData,
+      about,
+      services,
       works,
       reviews,
+      clients,
       faq,
     },
   };
