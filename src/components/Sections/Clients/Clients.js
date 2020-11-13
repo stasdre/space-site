@@ -9,7 +9,9 @@ const Clients = ({ clients }) => {
       <ul className={styles.clients__list}>
         {clients.map((item) => (
           <li key={item.id} className={styles.clients__item}>
-            {/* <Image src={`/${item.img}`} layout="fill" /> */}
+            {/* <Image src={`/${item.img}`} width={152} height={66} layout="responsive" /> */}
+            {/* <div className={styles.clients__img}>
+            </div> */}
           </li>
         ))}
       </ul>

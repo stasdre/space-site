@@ -120,35 +120,35 @@ export async function getStaticProps() {
   const clients = [
     {
       id: 1,
-      img: 'client_1.jpg',
+      img: 'client_1.png',
     },
     {
       id: 2,
-      img: 'client_1.jpg',
+      img: 'client_2.png',
     },
     {
       id: 3,
-      img: 'client_1.jpg',
+      img: 'client_3.png',
     },
     {
       id: 4,
-      img: 'client_1.jpg',
+      img: 'client_4.png',
     },
     {
       id: 5,
-      img: 'client_1.jpg',
+      img: 'client_5.png',
     },
     {
       id: 6,
-      img: 'client_1.jpg',
+      img: 'client_6.png',
     },
     {
       id: 7,
-      img: 'client_1.jpg',
+      img: 'client_7.png',
     },
     {
       id: 8,
-      img: 'client_1.jpg',
+      img: 'client_8.png',
     },
   ];
 
