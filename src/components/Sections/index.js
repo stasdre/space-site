@@ -8,3 +8,4 @@ export { Address } from './Address';
 export { Contacts } from './Contacts';
 export { Nav } from './Nav';
 export { Logo } from './Logo';
+export { Services } from './Services';
