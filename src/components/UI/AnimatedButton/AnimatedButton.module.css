@@ -1,10 +1,13 @@
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @util size(152px);
   border-radius: 50%;
   background: #4061f9;
   color: #ffffff;
-  font-size: 21px;
-  line-height: 27px;
+  font-size: 20px;
+  line-height: 26px;
   transition: all 0.2s;
   position: relative;
   &::after {

@@ -1,6 +1,6 @@
 import styles from './AnimatedButton.module.css';
 
-const AnimatedButton = ({ children, color = 'primary' }) => {
+const AnimatedButton = ({ children, color = 'primary', type = 'link', link }) => {
   let themeButton;
   switch (color) {
     case 'gray':
@@ -10,6 +10,15 @@ const AnimatedButton = ({ children, color = 'primary' }) => {
       themeButton = styles.primary;
       break;
   }
+
+  if (type === 'link') {
+    return (
+      <a href={link} className={`${styles.button} ${themeButton}`}>
+        {children}
+      </a>
+    );
+  }
+
   return <button className={`${styles.button} ${themeButton}`}>{children}</button>;
 };
 
