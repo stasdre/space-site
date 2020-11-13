@@ -1,6 +1,4 @@
-@import './utils/vars.css';
-@import './utils/breakpoints.css';
-@import './utils/reset.css';
+@import 'utils/reset.css';
 
 @import './stars.css';
 

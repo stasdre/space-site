@@ -1,6 +1,5 @@
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
-import '../assets/css/main.css';
+import { Header, Footer } from '@/components/Layouts';
+import '@/css/main.css';
 
 function MyApp({ Component, pageProps }) {
   return (

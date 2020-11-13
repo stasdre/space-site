@@ -1,11 +1,17 @@
 module.exports = {
   plugins: {
-    'postcss-import': {},
+    'postcss-import': {
+      path: ['src/assets/css'],
+    },
     'postcss-normalize': {},
     'postcss-utilities': {},
     'postcss-preset-env': {
       stage: 0,
       preserve: false,
+      importFrom: [
+        'src/assets/css/utils/vars.css',
+        'src/assets/css/utils/breakpoints.css',
+      ],
     },
     'postcss-font-magician': {
       custom: {

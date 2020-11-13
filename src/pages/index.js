@@ -1,11 +1,13 @@
 import Image from 'next/image';
-import { HeadSection } from '@/components/HeadSection';
-import { ShortText } from '@/components/ShortText';
-import { Works } from '@/components/Works';
-import { Reviews } from '@/components/Reviews';
-import { Collapse } from '@/components/Collapse';
-import { FooterContacts } from '@/components/Footer';
-import { ContactForm } from '@/components/ContactForm';
+import { HeadSection } from '@/components/Layouts';
+import {
+  Contacts,
+  ShortText,
+  Works,
+  Reviews,
+  Collapse,
+  ContactForm,
+} from '@/components/Sections';
 import styles from './Index.module.css';
 
 const Home = ({ works, reviews, faq }) => {
@@ -22,9 +24,10 @@ const Home = ({ works, reviews, faq }) => {
       <div className={`container ${styles.main__container}`}>
         <div className={styles.main__text}>
           <ShortText name="Агенция">
-            Занимаемся разработкой сайтов для бизнеса с 2013 года. За это время подобрали квалифицированных
-            специалистов, которые готовы помочь клиентам в создании сайта любой сложности, а также внедрить в него все
-            необходимые функции для высокой эффективности и результативности ведения вашего бизнеса.
+            Занимаемся разработкой сайтов для бизнеса с 2013 года. За это время подобрали
+            квалифицированных специалистов, которые готовы помочь клиентам в создании
+            сайта любой сложности, а также внедрить в него все необходимые функции для
+            высокой эффективности и результативности ведения вашего бизнеса.
           </ShortText>
         </div>
         <div className={styles.main__works}>
@@ -38,7 +41,7 @@ const Home = ({ works, reviews, faq }) => {
         </div>
         <div className={styles.main__contacts}>
           <div className={styles.main__contactsLeft}>
-            <FooterContacts />
+            <Contacts />
           </div>
           <div className={styles.main__contactsRight}>
             <ContactForm />
@@ -59,9 +62,24 @@ export async function getStaticProps() {
   ];
 
   const reviews = [
-    { id: 1, title: 'Отзыв от Ростислава Валихновского', time: '0:52', img: 'review_1.jpg' },
-    { id: 2, title: 'Отзыв от Ростислава Валихновского', time: '6:11', img: 'review_2.jpg' },
-    { id: 3, title: 'Отзыв от Ростислава Валихновского', time: '1:52', img: 'review_3.jpg' },
+    {
+      id: 1,
+      title: 'Отзыв от Ростислава Валихновского',
+      time: '0:52',
+      img: 'review_1.jpg',
+    },
+    {
+      id: 2,
+      title: 'Отзыв от Ростислава Валихновского',
+      time: '6:11',
+      img: 'review_2.jpg',
+    },
+    {
+      id: 3,
+      title: 'Отзыв от Ростислава Валихновского',
+      time: '1:52',
+      img: 'review_3.jpg',
+    },
   ];
 
   const faq = [

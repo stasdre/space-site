@@ -1,0 +1,10 @@
+export { Collapse } from './Collapse';
+export { ContactForm } from './ContactForm';
+export { Rating } from './Rating';
+export { Reviews } from './Reviews';
+export { ShortText } from './ShortText';
+export { Works } from './Works';
+export { Address } from './Address';
+export { Contacts } from './Contacts';
+export { Nav } from './Nav';
+export { Logo } from './Logo';
