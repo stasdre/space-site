@@ -1,0 +1,23 @@
+.head {
+  display: flex;
+  justify-content: center;
+}
+
+.head__title {
+  font-size: 61px;
+  line-height: 110%;
+  color: #ffffff;
+
+  & span:first-child {
+    font-weight: 600;
+  }
+
+  & span:nth-child(3) {
+    font-weight: 300;
+    padding-left: 70px;
+  }
+
+  @media (--large) {
+    font-size: 96px;
+  }
+}
