@@ -4,7 +4,7 @@
   justify-content: center;
   @util size(152px);
   border-radius: 50%;
-  background: #4061f9;
+  background: #284dfa;
   color: #ffffff;
   font-size: 20px;
   line-height: 26px;
@@ -20,7 +20,7 @@
     z-index: -1;
     transition: all 0.4s;
     border-radius: 50%;
-    background: #4061f9;
+    background: #284dfa;
   }
   &.gray {
     background: #737373;
