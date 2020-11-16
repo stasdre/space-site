@@ -1,9 +1,3 @@
-.main__container {
-  @media (--extra-large) {
-    padding: 0 10%;
-  }
-}
-
 .main__space {
   margin-bottom: 150px;
 }

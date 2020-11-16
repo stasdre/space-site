@@ -22,7 +22,7 @@ const Home = ({ title, spaceData, about, services, works, reviews, clients, faq 
           <Head title={title} />
         </HeadSection>
       </div>
-      <div className={`container ${styles.main__container}`}>
+      <div className={`container container__padding`}>
         <div className={styles.main__space}>
           <SpaceSite data={spaceData} />
         </div>

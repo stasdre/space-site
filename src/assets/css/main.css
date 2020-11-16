@@ -71,6 +71,12 @@ body {
   @util center-block;
 }
 
+.container__padding {
+  @media (--extra-large) {
+    padding: 0 10%;
+  }
+}
+
 .main {
   flex: 1;
 }

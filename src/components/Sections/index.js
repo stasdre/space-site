@@ -10,3 +10,5 @@ export { Nav } from './Nav';
 export { Logo } from './Logo';
 export { Services } from './Services';
 export { Clients } from './Clients';
+export { Breadcrumbs } from './Breadcrumbs';
+export { Portfolio } from './Portfolio';
