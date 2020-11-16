@@ -1,11 +1,9 @@
-import { HeadSection, Section } from '@/components/Layouts';
+import { ContactsSection, HeadSection, Section } from '@/components/Layouts';
 import {
-  Contacts,
   ShortText,
   Works,
   Reviews,
   Collapse,
-  ContactForm,
   Services,
   Clients,
 } from '@/components/Sections';
@@ -46,14 +44,9 @@ const Home = ({ title, spaceData, about, services, works, reviews, clients, faq 
         <Section className={styles.main__section} title="Важно!">
           <Collapse items={faq} />
         </Section>
-        <div className={styles.main__contacts}>
-          <div className={styles.main__contactsLeft}>
-            <Contacts />
-          </div>
-          <div className={styles.main__contactsRight}>
-            <ContactForm />
-          </div>
-        </div>
+        <Section className={styles.main__section}>
+          <ContactsSection />
+        </Section>
       </div>
     </>
   );

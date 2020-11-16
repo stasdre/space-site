@@ -1,5 +1,12 @@
-import { HeadSection, Section } from '@/components/Layouts';
-import { Breadcrumbs, Portfolio, Clients, Works, Collapse } from '@/components/Sections';
+import { ContactsSection, HeadSection, Section } from '@/components/Layouts';
+import {
+  Breadcrumbs,
+  Portfolio,
+  Clients,
+  Works,
+  Collapse,
+  PortfolioDesc,
+} from '@/components/Sections';
 import styles from './Services.module.css';
 
 const Services = ({ breadcrumbsItems, portfolio, clients, works, faq }) => {
@@ -20,12 +27,17 @@ const Services = ({ breadcrumbsItems, portfolio, clients, works, faq }) => {
         <Section
           className={`${styles.services__section} ${styles.services__desc}`}
           title="Интернет магазин — заказать создание интернет-магазина от Топ #1 SEO компании"
-        ></Section>
+        >
+          <PortfolioDesc />
+        </Section>
         <Section className={styles.services__section} title="Работы">
           <Works works={works} />
         </Section>
         <Section className={styles.services__section} title="Важно!">
           <Collapse items={faq} />
+        </Section>
+        <Section className={styles.services__section}>
+          <ContactsSection />
         </Section>
       </div>
     </>

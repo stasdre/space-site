@@ -15,25 +15,3 @@
     margin-bottom: 150px;
   }
 }
-
-.main__contacts {
-  display: flex;
-  margin-bottom: 100px;
-  @media (--extra-large) {
-    margin-bottom: 150px;
-  }
-}
-
-.main__contactsLeft {
-  display: none;
-  width: 40%;
-  @media (--medium) {
-    display: block;
-  }
-}
-
-.main__contactsRight {
-  @media (--medium) {
-    width: 60%;
-  }
-}
