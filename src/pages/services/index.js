@@ -6,10 +6,11 @@ import {
   Works,
   Collapse,
   PortfolioDesc,
+  Links,
 } from '@/components/Sections';
 import styles from './Services.module.css';
 
-const Services = ({ breadcrumbsItems, portfolio, clients, works, faq }) => {
+const Services = ({ breadcrumbsItems, portfolio, clients, works, faq, links }) => {
   return (
     <>
       <div className="container">
@@ -29,6 +30,9 @@ const Services = ({ breadcrumbsItems, portfolio, clients, works, faq }) => {
           title="Интернет магазин — заказать создание интернет-магазина от Топ #1 SEO компании"
         >
           <PortfolioDesc />
+        </Section>
+        <Section className={styles.services__section}>
+          <Links links={links} />
         </Section>
         <Section className={styles.services__section} title="Работы">
           <Works works={works} />
@@ -151,6 +155,15 @@ export async function getStaticProps() {
     },
   ];
 
+  const links = [
+    { id: 1, title: 'Интернет-магазин, который продает', link: '#' },
+    { id: 2, title: 'Современный продающий дизайн', link: '#' },
+    { id: 3, title: 'Быстрая выгрузка товаров через плагины ', link: '#' },
+    { id: 4, title: 'Интернет-магазин, который продает', link: '#' },
+    { id: 5, title: 'Современный продающий дизайн', link: '#' },
+    { id: 6, title: 'Быстрая выгрузка товаров через плагины ', link: '#' },
+  ];
+
   return {
     props: {
       breadcrumbsItems,
@@ -158,6 +171,7 @@ export async function getStaticProps() {
       clients,
       works,
       faq,
+      links,
     },
   };
 }
