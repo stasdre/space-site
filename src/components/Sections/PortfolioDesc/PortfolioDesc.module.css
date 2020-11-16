@@ -1,0 +1,34 @@
+.portfolio__tabList {
+  display: flex;
+  align-items: center;
+  margin-bottom: 77px;
+}
+
+.portfolio__tab {
+  margin-right: 120px;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 140%;
+  cursor: pointer;
+  color: #737373;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #737373;
+  transition: color 0.3s, border 0.3s;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.portfolio__tab_active {
+  color: #ffffff;
+  border-bottom: 1px solid #284dfa;
+}
+
+.portfolio__text {
+  font-size: 41px;
+  line-height: 53px;
+}
+
+.portfolio__text_active {
+  transition: 0.3s;
+}
