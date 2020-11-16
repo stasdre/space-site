@@ -13,6 +13,10 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </div>
         <Footer />
+        <div className="wrapper__bottomBlurContainer">
+          <div className="wrapper__bottomBlur"></div>
+          <div className="wrapper__bottomBlur2"></div>
+        </div>
       </div>
     </>
   );

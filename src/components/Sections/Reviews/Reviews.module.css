@@ -1,6 +1,23 @@
 .reviews {
+  position: relative;
   display: flex;
   flex-direction: column;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -78px;
+    top: 34px;
+    /* width: 430.39px;
+    height: 424.99px; */
+    width: 468.39px;
+    height: 528.99px;
+    background: #284dfa;
+    opacity: 0.8;
+    /* filter: blur(120px); */
+    filter: blur(250px);
+    transform: matrix(1, 0.27, -0.09, 0.97, 0, 0);
+  }
 }
 .reviews__list {
   display: flex;

@@ -17,9 +17,11 @@ import styles from './Index.module.css';
 const Home = ({ title, spaceData, about, services, works, reviews, clients, faq }) => {
   return (
     <>
-      <HeadSection>
-        <Head title={title} />
-      </HeadSection>
+      <div className="container">
+        <HeadSection>
+          <Head title={title} />
+        </HeadSection>
+      </div>
       <div className={`container ${styles.main__container}`}>
         <div className={styles.main__space}>
           <SpaceSite data={spaceData} />
