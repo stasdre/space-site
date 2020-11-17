@@ -1,17 +1,17 @@
 .main__space {
-  margin-bottom: 150px;
+  margin-bottom: 7.5rem;
 }
 
 .main__text {
-  margin-bottom: 100px;
+  margin-bottom: 5rem;
   @media (--extra-large) {
-    margin-bottom: 150px;
+    margin-bottom: 7.5rem;
   }
 }
 
 .main__section {
-  margin-bottom: 100px;
+  margin-bottom: 5rem;
   @media (--extra-large) {
-    margin-bottom: 150px;
+    margin-bottom: 7.5rem;
   }
 }

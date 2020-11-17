@@ -1,16 +1,16 @@
 .btn {
   font-weight: 500;
-  font-size: 18px;
-  line-height: 23px;
+  font-size: 0.9rem;
+  line-height: 1.15rem;
   color: #ffffff;
   background: transparent;
   border: 1px solid #ffffff;
   border-radius: 42px;
-  padding: 13px 37px;
+  padding: 0.65rem 1.85rem;
 }
 
 .btn__round {
-  @util size(51px);
+  @util size(2.55rem);
   display: flex;
   align-items: center;
   justify-content: center;

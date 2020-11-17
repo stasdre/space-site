@@ -1,16 +1,16 @@
 .head {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 700px;
+  /* min-height: 700px; */
   padding-bottom: 34px;
 }
 
 .head__title {
-  font-size: 61px;
+  font-size: 4.8rem;
   line-height: 110%;
   color: #ffffff;
+  padding-top: 10vh;
+  padding-left: 9.75rem;
+  margin-bottom: 4rem;
 
   & span:first-child {
     font-weight: 600;
@@ -18,53 +18,71 @@
 
   & span:nth-child(3) {
     font-weight: 300;
-    padding-left: 70px;
+    padding-left: 3.5rem;
   }
 
   @media (--large) {
-    font-size: 96px;
+    /* font-size: 96px; */
   }
 }
 
 .head__planet {
   position: absolute;
   z-index: -1;
-  left: 73px;
-  bottom: 34px;
-  width: 756.12px;
-  height: 744.67px;
-  animation: spin 15s linear infinite;
+  left: 3.65rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
   &::after {
     content: '';
     display: block;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    width: 385.22px;
-    height: 479.14px;
+    width: 50%;
+    height: 90%;
     background: #fd14a0;
+    margin-left: -30%;
     opacity: 0.8;
-    filter: blur(250px);
-    transform: translateY(-50%) matrix(0.27, 1.02, -0.86, 0.4, 0, 0);
+    border-radius: 50%;
+    filter: blur(95px);
+    transform: matrix(0.27, 1.02, -0.86, 0.4, 0, 0);
   }
 
   &::before {
     content: '';
     display: block;
-    position: absolute;
-    width: 436px;
-    height: 429px;
-    left: 0;
-    top: 50%;
+    width: 50%;
+    height: 90%;
     background: #9714fd;
     opacity: 0.8;
-    filter: blur(250px);
-    transform: translateY(-50%) matrix(1, 0.27, -0.09, 0.97, 0, 0);
+    border-radius: 50%;
+    filter: blur(95px);
+    transform: matrix(1, 0.27, -0.09, 0.97, 0, 0);
   }
 }
 
 @keyframes spin {
   to {
     transform: rotateZ(360deg);
+  }
+}
+
+.head__preview {
+  margin-bottom: 13px;
+  font-size: 1rem;
+  line-height: 170%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @util size(3.45rem);
+    background: transparent url('../../../../assets/icons/play-btn.svg');
   }
 }

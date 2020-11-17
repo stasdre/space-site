@@ -18,9 +18,9 @@
 .checkbox__name {
   border: 1px solid #ffffff;
   border-radius: 42px;
-  padding: 12px 37px;
+  padding: 0.6rem 1.85rem;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 23px;
+  font-size: 0.9rem;
+  line-height: 1.15rem;
   transition: 0.3s;
 }

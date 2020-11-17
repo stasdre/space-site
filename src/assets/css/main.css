@@ -1,4 +1,5 @@
 @import 'utils/reset.css';
+@import 'utils/vars.css';
 
 @import './stars.css';
 
@@ -31,8 +32,8 @@ body {
   z-index: -1;
   bottom: -200px;
   right: -125px;
-  width: 667.46px;
-  height: 753.81px; /* z-index: 0; */
+  width: 612.46px;
+  height: 606.81px;
   background: #d0990c;
   opacity: 0.8;
   filter: blur(250px);
@@ -42,10 +43,10 @@ body {
 .wrapper__bottomBlur {
   position: absolute;
   display: block;
-  width: 468.39px;
-  height: 528.99px;
-  right: 125px;
-  bottom: 200px;
+  width: 472.39px;
+  height: 428.99px;
+  right: -50px;
+  bottom: 0;
   background: #ea1111;
   opacity: 0.8;
   filter: blur(250px);
@@ -55,8 +56,8 @@ body {
 .wrapper__bottomBlur2 {
   position: absolute;
   display: block;
-  width: 468.39px;
-  height: 528.99px;
+  width: 419.39px;
+  height: 332.99px;
   right: 125px;
   bottom: 200px;
   background: #1e2ebe;
@@ -67,13 +68,20 @@ body {
 
 .container {
   max-width: 1440px;
+  width: 100%;
   padding: 0 20px;
   @util center-block;
+  @media (--extra-large) {
+    width: 78%;
+  }
+  @media (--big) {
+    width: 100%;
+  }
 }
 
 .container__padding {
   @media (--extra-large) {
-    padding: 0 10%;
+    padding: 0 8%;
   }
 }
 

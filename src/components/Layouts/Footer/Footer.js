@@ -3,10 +3,12 @@ import styles from './Footer.module.css';
 
 const Footer = () => (
   <footer className={styles.footer}>
-    <div className="container">
-      <div className={styles.footer__top}>
+    <div className={styles.footer__top}>
+      <div className="container">
         <Logo />
       </div>
+    </div>
+    <div className="container">
       <div className={styles.footer__content}>
         <div className={styles.footer__contentLeft}>
           <div className={styles.footer__address}>

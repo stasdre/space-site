@@ -1,17 +1,17 @@
 .space {
   background: #403c3c;
   opacity: 0.8;
-  padding: 59px 74px;
+  padding: 2.95rem 3.7rem;
 }
 
 .space__title {
   font-weight: 300;
-  font-size: 31px;
+  font-size: 1.55rem;
   line-height: 140%;
   margin-bottom: 30px;
 }
 
 .space__desc {
-  font-size: 20px;
+  font-size: 1rem;
   line-height: 170%;
 }

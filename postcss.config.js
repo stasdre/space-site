@@ -5,6 +5,7 @@ module.exports = {
     },
     'postcss-normalize': {},
     'postcss-utilities': {},
+    'postcss-pr': {},
     'postcss-preset-env': {
       stage: 0,
       preserve: false,

@@ -11,7 +11,7 @@
     color: transparent;
   }
   &:placeholder-shown ~ .input__placeholder {
-    top: 14px;
+    top: 0;
     margin: auto;
     font-size: 18px;
     color: #cacaca;

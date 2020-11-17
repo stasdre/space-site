@@ -84,7 +84,7 @@
   line-height: 27px;
   color: #ffffff;
   @media (--medium) {
-    font-size: 26px;
+    font-size: 1.3rem;
     line-height: 140%;
   }
 }

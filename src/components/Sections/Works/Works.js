@@ -17,7 +17,7 @@ const Works = ({ works }) => {
         ))}
       </ul>
       <div className={styles.works__button}>
-        <AnimatedButton type="link" link="#">
+        <AnimatedButton type="link" link="/works">
           Смотреть все
         </AnimatedButton>
       </div>

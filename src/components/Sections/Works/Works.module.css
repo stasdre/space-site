@@ -5,16 +5,16 @@
 .works__list {
   display: flex;
   flex-direction: column;
-  margin-bottom: 33px;
+  margin-bottom: 1.65rem;
   @media (--extra-large) {
-    margin-bottom: 60px;
+    margin-bottom: 3rem;
   }
 }
 
 .works__item {
   border-top: 2px solid #ffffff;
   border-bottom: 2px solid #ffffff;
-  padding: 26px 0;
+  padding: 1.3rem 0;
 }
 
 .works__link {
@@ -27,21 +27,21 @@
 
 .works__title {
   font-weight: 300;
-  font-size: 41px;
-  line-height: 53px;
-  margin-right: 27px;
+  font-size: 2.05rem;
+  line-height: 2.65rem;
+  margin-right: 1.35rem;
   color: #ffffff;
   @media (--medium) {
     margin-right: 30px;
-    font-size: 72px;
-    line-height: 94px;
+    font-size: 3.6rem;
+    line-height: 4.7rem;
   }
 }
 
 .works__year {
   font-weight: 300;
-  font-size: 16px;
-  line-height: 21px;
+  font-size: 0.8rem;
+  line-height: 1.05rem;
   color: #cacaca;
 }
 
