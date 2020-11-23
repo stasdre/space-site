@@ -27,7 +27,7 @@ body {
   }
 }
 
-.wrapper__bottomBlurContainer {
+/* .wrapper__bottomBlurContainer {
   position: absolute;
   z-index: -1;
   bottom: -200px;
@@ -64,7 +64,7 @@ body {
   opacity: 0.8;
   filter: blur(250px);
   transform: matrix(1, 0.27, -0.09, 0.97, 0, 0);
-}
+} */
 
 .container {
   max-width: 1440px;

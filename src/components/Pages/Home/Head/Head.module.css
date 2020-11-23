@@ -7,14 +7,9 @@
 }
 
 .head__title {
-  position: absolute;
-  left: -9%;
-  z-index: 1;
   font-size: 4.8rem;
   line-height: 110%;
   color: #ffffff;
-  top: 50%;
-  transform: translateY(-50%);
 
   & span:first-child {
     font-weight: 600;
@@ -26,7 +21,18 @@
   }
 
   @media (--large) {
-    /* font-size: 96px; */
+    position: absolute;
+    left: -9%;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.head__img {
+  display: none;
+  @media (--large) {
+    display: block;
   }
 }
 
@@ -54,6 +60,10 @@
 }
 
 .head__planet {
+  display: none;
+  @media (--large) {
+    display: block;
+  }
   position: absolute;
   z-index: -2;
   left: 3.65rem;

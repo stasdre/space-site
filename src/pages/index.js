@@ -46,7 +46,7 @@ const Home = ({ title, spaceData, about, services, works, reviews, clients, faq 
           <Clients clients={clients} />
         </Section>
         <Section className={styles.main__section} title="Важно!">
-          {/* <Collapse items={faq} /> */}
+          <Collapse items={faq} />
         </Section>
         <Section className={styles.main__section}>
           <ContactsSection />
