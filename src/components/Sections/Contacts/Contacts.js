@@ -1,8 +1,11 @@
-import { Icon } from '@/components/UI';
+import { Social } from '@/components/Sections';
 
 import styles from './Contacts.module.css';
-import Telegram from '../../../assets/icons/telegram.svg';
-import Viber from '../../../assets/icons/viber.svg';
+
+const socials = [
+  { name: 'telegramm', link: '#' },
+  { name: 'viber', link: '#' },
+];
 
 const FooterContacts = () => (
   <div className={styles.footerContacts}>
@@ -13,7 +16,8 @@ const FooterContacts = () => (
     <a href="mailto:info@space-site.com.ua" className={styles.FooterContacts__email}>
       info@space-site.com.ua
     </a>
-    <ul className={styles.FooterContacts__icons}>
+    <Social links={socials} />
+    {/* <ul className={styles.FooterContacts__icons}>
       <li className={styles.FooterContacts__item}>
         <a href="#">
           <Icon size="small">
@@ -28,7 +32,7 @@ const FooterContacts = () => (
           </Icon>
         </a>
       </li>
-    </ul>
+    </ul> */}
   </div>
 );
 

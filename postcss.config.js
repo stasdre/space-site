@@ -6,6 +6,7 @@ module.exports = {
     'postcss-normalize': {},
     'postcss-utilities': {},
     'postcss-pr': {},
+    'postcss-inline-svg': { paths: ['./src/assets/icons'] },
     'postcss-preset-env': {
       stage: 0,
       preserve: false,
