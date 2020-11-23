@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { ContactsSection, HeadSection, Section } from '@/components/Layouts';
 import {
   ShortText,
@@ -21,13 +22,16 @@ const Home = ({ title, spaceData, about, services, works, reviews, clients, faq 
         </HeadSection>
       </div>
       <div className={`container container__padding`}>
+        <Section className={styles.main__section}>
+          <div className={styles.main__about}>
+            Создание прибыльных продающих сайтов для бизнеса под ключ с гарантией
+            результата.
+          </div>
+          <div className={styles.main__videoName}>О компании за 52 секунды</div>
+          <Image src="/about_video.jpg" width="1194" height="574" />
+        </Section>
         <div className={styles.main__space}>
           <SpaceSite data={spaceData} />
-        </div>
-        <div className={styles.main__text}>
-          <ShortText name={about.title} link={about.link}>
-            {about.desc}
-          </ShortText>
         </div>
         <Section className={styles.main__section} title="Услуги">
           <Services services={services} />
