@@ -1,6 +1,14 @@
 import Image from 'next/image';
+import { Social } from '@/components/Sections';
 
 import styles from './Head.module.css';
+
+const socials = [
+  { name: 'fbMessage', link: '#' },
+  { name: 'telegramm', link: '#' },
+  { name: 'viber', link: '#' },
+  { name: 'phone', link: '#' },
+];
 
 const Head = ({ title }) => {
   return (
@@ -11,6 +19,7 @@ const Head = ({ title }) => {
       </div>
       <div className={styles.head__contacts}>
         <div className={styles.head__click}>Свяжитесь с нами в 1 клик:</div>
+        <Social links={socials} />
       </div>
       <div className={styles.head__planet}></div>
     </div>
