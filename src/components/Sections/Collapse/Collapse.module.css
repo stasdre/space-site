@@ -5,7 +5,7 @@
   grid-auto-rows: auto;
   align-items: flex-start;
   @media (--medium) {
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
   }
 }
 
