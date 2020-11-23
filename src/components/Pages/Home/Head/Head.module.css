@@ -1,16 +1,20 @@
 .head {
   position: relative;
-  /* min-height: 700px; */
-  padding-bottom: 34px;
+  padding-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .head__title {
+  position: absolute;
+  left: -9%;
+  z-index: 1;
   font-size: 4.8rem;
   line-height: 110%;
   color: #ffffff;
-  padding-top: 10vh;
-  padding-left: 9.75rem;
-  margin-bottom: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
 
   & span:first-child {
     font-weight: 600;
@@ -26,38 +30,62 @@
   }
 }
 
+.head__slider {
+  /* position: absolute;
+  top: 17px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1; */
+  position: relative;
+  width: 85%;
+  margin-bottom: 5.2rem;
+}
+
+.head__contacts {
+  align-self: flex-end;
+  padding-right: 5rem;
+}
+
+.head__click {
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 140%;
+}
+
 .head__planet {
   position: absolute;
-  z-index: -1;
+  z-index: -2;
   left: 3.65rem;
   top: 50%;
-  transform: translateY(-50%);
-  width: 50%;
-  height: 100%;
+  transform: translateY(-55%);
+  width: 54%;
+  height: 70%;
   display: flex;
   align-items: center;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    display: block;
+    width: 68.5%;
+    height: 78.8%;
+    opacity: 0.8;
+    background: #fd14a0;
+    border-radius: 50%;
+    filter: blur(150px);
+    transform: translateY(-50%) matrix(0.27, 1.02, -0.86, 0.4, 0, 0);
+  }
   &::after {
     content: '';
     display: block;
-    width: 50%;
-    height: 90%;
-    background: #fd14a0;
-    margin-left: -30%;
-    opacity: 0.8;
-    border-radius: 50%;
-    filter: blur(95px);
-    transform: matrix(0.27, 1.02, -0.86, 0.4, 0, 0);
-  }
-
-  &::before {
-    content: '';
-    display: block;
-    width: 50%;
-    height: 90%;
+    position: absolute;
+    top: 8%;
+    left: 4%;
+    width: 62.5%;
+    height: 72.2%;
     background: #9714fd;
-    opacity: 0.8;
-    border-radius: 50%;
-    filter: blur(95px);
+    filter: blur(150px);
     transform: matrix(1, 0.27, -0.09, 0.97, 0, 0);
   }
 }
@@ -65,24 +93,5 @@
 @keyframes spin {
   to {
     transform: rotateZ(360deg);
-  }
-}
-
-.head__preview {
-  margin-bottom: 13px;
-  font-size: 1rem;
-  line-height: 170%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    @util size(3.45rem);
-    background: transparent url('../../../../assets/icons/play-btn.svg');
   }
 }

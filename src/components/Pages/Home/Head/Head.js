@@ -5,12 +5,12 @@ import styles from './Head.module.css';
 const Head = ({ title }) => {
   return (
     <div className={styles.head}>
-      <h1 className={styles.head__title} dangerouslySetInnerHTML={{ __html: title }} />
-      <div className={styles.head__about}>
-        <div className={styles.head__preview}>
-          <Image src="/about.jpg" width={294} height={170} />
-        </div>
-        <div className={styles.head__name}>О компании за 52 секунды</div>
+      <div className={styles.head__slider}>
+        <h1 className={styles.head__title} dangerouslySetInnerHTML={{ __html: title }} />
+        <Image src="/main.jpg" width="1195" height="482" />
+      </div>
+      <div className={styles.head__contacts}>
+        <div className={styles.head__click}>Свяжитесь с нами в 1 клик:</div>
       </div>
       <div className={styles.head__planet}></div>
     </div>
