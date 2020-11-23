@@ -14,3 +14,4 @@ export { Breadcrumbs } from './Breadcrumbs';
 export { Portfolio } from './Portfolio';
 export { PortfolioDesc } from './PortfolioDesc';
 export { Links } from './Links';
+export { Social } from './Social';

@@ -1,0 +1,33 @@
+.socials__list {
+  display: flex;
+  align-items: center;
+  & .fbMessage {
+    background-image: url('../../../assets/icons/fb-message.svg');
+  }
+  & .telegramm {
+    background-image: url('../../../assets/icons/telegramm__color.svg');
+    @util size(32px);
+  }
+  & .viber {
+    background-image: url('../../../assets/icons/viber__color.svg');
+    @util size(32px 35px);
+  }
+  & .phone {
+    background-image: url('../../../assets/icons/phone.svg');
+    @util size(32px);
+  }
+}
+
+.socails__item {
+  margin-right: 20px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.socails__link {
+  display: block;
+  font-size: 0;
+  @util size(30px);
+  background-repeat: no-repeat;
+}
