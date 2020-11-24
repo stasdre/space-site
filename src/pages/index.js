@@ -1,24 +1,21 @@
 import Image from 'next/image';
+import Head from 'next/head';
 import { ContactsSection, HeadSection, Section } from '@/components/Layouts';
-import {
-  ShortText,
-  Works,
-  Reviews,
-  Collapse,
-  Services,
-  Clients,
-} from '@/components/Sections';
+import { Works, Reviews, Collapse, Services, Clients } from '@/components/Sections';
 
-import { Head, SpaceSite } from '@/components/Pages/Home';
+import { Head as HeadPage, SpaceSite } from '@/components/Pages/Home';
 
 import styles from './Index.module.css';
 
 const Home = ({ title, spaceData, about, services, works, reviews, clients, faq }) => {
   return (
     <>
+      <Head>
+        <title>Space site</title>
+      </Head>
       <div className="container">
         <HeadSection>
-          <Head title={title} />
+          <HeadPage title={title} />
         </HeadSection>
       </div>
       <div className={`container container__padding`}>
