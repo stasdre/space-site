@@ -88,3 +88,8 @@ body {
 .main {
   flex: 1;
 }
+
+.slick-list,
+.slick-track {
+  touch-action: pan-y;
+}
