@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { AnimatedButton } from '@/components/UI';
+
 import styles from './Reviews.module.css';
 
 const Reviews = ({ reviews }) => {

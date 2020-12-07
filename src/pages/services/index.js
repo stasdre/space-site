@@ -1,14 +1,12 @@
+import dynamic from 'next/dynamic';
+
 import { ContactsSection, HeadSection, Section } from '@/components/Layouts';
-import {
-  Breadcrumbs,
-  Portfolio,
-  Clients,
-  Works,
-  Collapse,
-  PortfolioDesc,
-  Links,
-} from '@/components/Sections';
+import { Breadcrumbs, Portfolio, PortfolioDesc, Links } from '@/components/Sections';
 import styles from './Services.module.css';
+
+const Works = dynamic(() => import('@/components/Sections/Works/Works'));
+const Clients = dynamic(() => import('@/components/Sections/Clients/Clients'));
+const Collapse = dynamic(() => import('@/components/Sections/Collapse/Collapse'));
 
 const Services = ({ breadcrumbsItems, portfolio, clients, works, faq, links }) => {
   return (

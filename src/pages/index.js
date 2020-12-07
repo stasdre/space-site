@@ -1,11 +1,19 @@
 import Image from 'next/image';
 import Head from 'next/head';
 import { ContactsSection, HeadSection, Section } from '@/components/Layouts';
-import { Works, Reviews, Collapse, Services, Clients } from '@/components/Sections';
 
-import { Head as HeadPage, SpaceSite } from '@/components/Pages/Home';
+import { Head as HeadPage } from '@/components/Pages/Home';
 
 import styles from './Index.module.css';
+
+import dynamic from 'next/dynamic';
+
+const Reviews = dynamic(() => import('@/components/Sections/Reviews/Reviews'));
+const Services = dynamic(() => import('@/components/Sections/Services/Services'));
+const Works = dynamic(() => import('@/components/Sections/Works/Works'));
+const Clients = dynamic(() => import('@/components/Sections/Clients/Clients'));
+const Collapse = dynamic(() => import('@/components/Sections/Collapse/Collapse'));
+const SpaceSite = dynamic(() => import('@/components/Pages/Home/SpaceSite/SpaceSite'));
 
 const Home = ({ title, spaceData, about, services, works, reviews, clients, faq }) => {
   return (
