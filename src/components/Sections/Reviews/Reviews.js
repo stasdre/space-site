@@ -13,7 +13,6 @@ const Reviews = ({ reviews }) => {
     infinite: true,
     arrows: false,
     centerMode: true,
-    dots: false,
     lazyLoad: '/',
     centerPadding: '10%',
     responsive: [

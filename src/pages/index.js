@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Head from 'next/head';
-import { ContactsSection, HeadSection, Section } from '@/components/Layouts';
+import { ContactsSection, HeadSection } from '@/components/Layouts';
 
 import { Head as HeadPage } from '@/components/Pages/Home';
 
@@ -27,35 +27,40 @@ const Home = ({ title, spaceData, about, services, works, reviews, clients, faq 
         </HeadSection>
       </div>
       <div className={`container container__padding`}>
-        <Section className={styles.main__section}>
+        <section className={styles.main__section}>
           <div className={styles.main__about}>
             Создание прибыльных продающих сайтов для бизнеса под ключ с гарантией
             результата.
           </div>
           <div className={styles.main__videoName}>О компании за 52 секунды</div>
           <Image src="/about_video.jpg" width="1194" height="574" />
-        </Section>
+        </section>
         <div className={styles.main__space}>
           <SpaceSite data={spaceData} />
         </div>
-        <Section className={styles.main__section} title="Услуги">
+        <section className={styles.main__section}>
+          <div className="section__title">Услуги</div>
           <Services services={services} />
-        </Section>
-        <Section className={styles.main__section} title="Работы">
+        </section>
+        <section className={styles.main__section}>
+          <div className="section__title">Работы</div>
           <Works works={works} />
-        </Section>
-        <Section className={styles.main__section} title="Отзывы">
+        </section>
+        <section className={styles.main__section}>
+          <div className="section__title">Отзывы</div>
           <Reviews reviews={reviews} />
-        </Section>
-        <Section className={styles.main__section} title="Наши клиенты">
+        </section>
+        <section className={styles.main__section}>
+          <div className="section__title">Наши клиенты</div>
           <Clients clients={clients} />
-        </Section>
-        <Section className={styles.main__section} title="Важно!">
+        </section>
+        <section className={styles.main__section}>
+          <div className="section__title">Важно!</div>
           <Collapse items={faq} />
-        </Section>
-        <Section className={styles.main__section}>
+        </section>
+        <section className={styles.main__section}>
           <ContactsSection />
-        </Section>
+        </section>
       </div>
     </>
   );

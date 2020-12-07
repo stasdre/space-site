@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 
-import { ContactsSection, HeadSection, Section } from '@/components/Layouts';
+import { ContactsSection, HeadSection } from '@/components/Layouts';
 import { Breadcrumbs, Portfolio, PortfolioDesc, Links } from '@/components/Sections';
 import styles from './Services.module.css';
 
@@ -20,27 +20,30 @@ const Services = ({ breadcrumbsItems, portfolio, clients, works, faq, links }) =
         </HeadSection>
       </div>
       <div className="container container__padding">
-        <Section className={styles.services__section} title="Наши клиенты">
+        <section className={styles.services__section}>
+          <div className="section__title">Наши клиенты</div>
           <Clients clients={clients} />
-        </Section>
-        <Section
-          className={`${styles.services__section} ${styles.services__desc}`}
-          title="Интернет магазин — заказать создание интернет-магазина от Топ #1 SEO компании"
-        >
+        </section>
+        <section className={`${styles.services__section} ${styles.services__desc}`}>
+          <div className="section__title">
+            Интернет магазин — заказать создание интернет-магазина от Топ #1 SEO компании
+          </div>
           <PortfolioDesc />
-        </Section>
-        <Section className={styles.services__section}>
+        </section>
+        <section className={styles.services__section}>
           <Links links={links} />
-        </Section>
-        <Section className={styles.services__section} title="Работы">
+        </section>
+        <section className={styles.services__section}>
+          <div className="section__title">Работы</div>
           <Works works={works} />
-        </Section>
-        <Section className={styles.services__section} title="Важно!">
+        </section>
+        <section className={styles.services__section}>
+          <div className="section__title">Важно!</div>
           <Collapse items={faq} />
-        </Section>
-        <Section className={styles.services__section}>
+        </section>
+        <section className={styles.services__section}>
           <ContactsSection />
-        </Section>
+        </section>
       </div>
     </>
   );
