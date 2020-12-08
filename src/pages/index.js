@@ -6,16 +6,14 @@ import { Head as HeadPage } from '@/components/Pages/Home';
 
 import styles from './Index.module.css';
 
-import dynamic from 'next/dynamic';
+import { Reviews } from '@/components/Sections/Reviews';
+import { Services } from '@/components/Sections/Services';
+import { Works } from '@/components/Sections/Works';
+import { Clients } from '@/components/Sections/Clients';
+import { Collapse } from '@/components/Sections/Collapse';
+import { SpaceSite } from '@/components/Pages/Home/SpaceSite';
 
-const Reviews = dynamic(() => import('@/components/Sections/Reviews/Reviews'));
-const Services = dynamic(() => import('@/components/Sections/Services/Services'));
-const Works = dynamic(() => import('@/components/Sections/Works/Works'));
-const Clients = dynamic(() => import('@/components/Sections/Clients/Clients'));
-const Collapse = dynamic(() => import('@/components/Sections/Collapse/Collapse'));
-const SpaceSite = dynamic(() => import('@/components/Pages/Home/SpaceSite/SpaceSite'));
-
-const Home = ({ title, spaceData, about, services, works, reviews, clients, faq }) => {
+const Home = ({ title, spaceData, services, works, reviews, clients, faq }) => {
   return (
     <>
       <Head>
