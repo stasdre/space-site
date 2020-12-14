@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Head from 'next/head';
 import { ContactsSection, HeadSection } from '@/components/Layouts';
 
@@ -12,6 +11,8 @@ import { Works } from '@/components/Sections/Works';
 import { Clients } from '@/components/Sections/Clients';
 import { Collapse } from '@/components/Sections/Collapse';
 import { SpaceSite } from '@/components/Pages/Home/SpaceSite';
+import { SubTitle } from '@/components/Sections/SubTitle';
+import { AboutVideo } from '@/components/Sections/AboutVideo';
 
 const Home = ({ title, spaceData, services, works, reviews, clients, faq }) => {
   return (
@@ -26,16 +27,17 @@ const Home = ({ title, spaceData, services, works, reviews, clients, faq }) => {
       </div>
       <div className={`container container__padding`}>
         <section className={styles.main__section}>
-          <div className={styles.main__about}>
+          <SubTitle>
             Создание прибыльных продающих сайтов для бизнеса под ключ с гарантией
             результата.
-          </div>
-          <div className={styles.main__videoName}>О компании за 52 секунды</div>
-          <Image src="/about_video.jpg" width="1194" height="574" />
+          </SubTitle>
         </section>
-        <div className={styles.main__space}>
+        <section className={styles.main__section}>
+          <AboutVideo title="О компании за 52 секунды" src="/about_video.jpg" />
+        </section>
+        <section className={styles.main__section}>
           <SpaceSite data={spaceData} />
-        </div>
+        </section>
         <section className={styles.main__section}>
           <div className="section__title">Услуги</div>
           <Services services={services} />

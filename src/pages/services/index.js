@@ -5,10 +5,12 @@ import { Breadcrumbs, Portfolio, PortfolioDesc, Links } from '@/components/Secti
 import styles from './Services.module.css';
 
 const Works = dynamic(() => import('@/components/Sections/Works/Works'));
-const Clients = dynamic(() => import('@/components/Sections/Clients/Clients'));
 const Collapse = dynamic(() => import('@/components/Sections/Collapse/Collapse'));
+import { SubTitle } from '@/components/Sections/SubTitle';
+import { AboutVideo } from '@/components/Sections/AboutVideo';
+import { SpaceSite } from '@/components/Pages/Home/SpaceSite';
 
-const Services = ({ breadcrumbsItems, portfolio, clients, works, faq, links }) => {
+const Services = ({ breadcrumbsItems, portfolio, spaceData, works, faq, links }) => {
   return (
     <>
       <div className="container">
@@ -20,16 +22,26 @@ const Services = ({ breadcrumbsItems, portfolio, clients, works, faq, links }) =
         </HeadSection>
       </div>
       <div className="container container__padding">
-        <section className={styles.services__section}>
-          <div className="section__title">Наши клиенты</div>
-          <Clients clients={clients} />
-        </section>
-        <section className={`${styles.services__section} ${styles.services__desc}`}>
-          <div className="section__title">
+        <section className={`${styles.services__section}`}>
+          <SubTitle>
             Интернет магазин — заказать создание интернет-магазина от Топ #1 SEO компании
-          </div>
-          <PortfolioDesc />
+            в стране
+          </SubTitle>
         </section>
+        <section className={`${styles.services__section}`}>
+          <AboutVideo
+            title="Делаем магазины приносящие продажи с 1-го дня запуска сайта!"
+            src="/about_video.jpg"
+          />
+        </section>
+        <section className={`${styles.services__section}`}>
+          <SpaceSite data={spaceData} />
+        </section>
+
+        <section className={styles.services__section}>
+          <ContactsSection />
+        </section>
+
         <section className={styles.services__section}>
           <Links links={links} />
         </section>
@@ -165,6 +177,12 @@ export async function getStaticProps() {
     { id: 6, title: 'Быстрая выгрузка товаров через плагины ', link: '#' },
   ];
 
+  const spaceData = {
+    title: 'Space Site — разработка сайтов от 690$',
+    desc:
+      'Создание сайтов — это необходимость для любого бизнеса в настоящее время. С помощью созданного сайта можно быстро продать 99% видов товаров и услуг. Создание сайта поможет получить горячих клиентов из поисковых систем и стабилизировать любой вид бизнеса.',
+  };
+
   return {
     props: {
       breadcrumbsItems,
@@ -173,6 +191,7 @@ export async function getStaticProps() {
       works,
       faq,
       links,
+      spaceData,
     },
   };
 }

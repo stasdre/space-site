@@ -3,13 +3,8 @@
 }
 
 .services__section {
-  margin-bottom: 100px;
+  margin-bottom: 5rem;
   @media (--extra-large) {
-    margin-bottom: 150px;
+    margin-bottom: 7.5rem;
   }
-}
-
-.services__desc {
-  border-top: 1px solid #4a4848;
-  padding-top: 123px;
 }

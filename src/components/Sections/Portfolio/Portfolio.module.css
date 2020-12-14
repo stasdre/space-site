@@ -3,6 +3,7 @@
 }
 
 .portfolio__title {
+  position: relative;
   max-width: 85%;
   font-size: 96px;
   line-height: 115%;
