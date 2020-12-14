@@ -110,11 +110,20 @@ export async function getStaticProps() {
   ];
 
   const works = [
-    { id: 1, title: 'Zlata Ognevich', year: '2020' },
-    { id: 2, title: 'Laskarda', year: '2020' },
-    { id: 3, title: 'EvaSad', year: '2020' },
-    { id: 4, title: 'Novias', year: '2020' },
-    { id: 5, title: 'Converse', year: '2020' },
+    {
+      id: 1,
+      title: 'Converse',
+      img: 'work_1.jpg',
+      type: 'Интернет-магазин',
+    },
+    {
+      id: 2,
+      title: 'Zlata Ognevich',
+      img: 'work_2.jpg',
+      type: 'Корпоративный',
+    },
+    { id: 3, title: 'EvaSad', img: 'work_3.jpg', type: 'Корпоративный' },
+    { id: 4, title: 'Novias', img: 'work_4.jpg', type: 'Интернет магазин' },
   ];
 
   const faq = [
