@@ -4,8 +4,8 @@ import { ContactsSection, HeadSection } from '@/components/Layouts';
 import { Breadcrumbs, Portfolio, PortfolioDesc, Links } from '@/components/Sections';
 import styles from './Services.module.css';
 
-const Works = dynamic(() => import('@/components/Sections/Works/Works'));
-const Collapse = dynamic(() => import('@/components/Sections/Collapse/Collapse'));
+import { Works } from '@/components/Sections/Works';
+import { Collapse } from '@/components/Sections/Collapse';
 import { SubTitle } from '@/components/Sections/SubTitle';
 import { AboutVideo } from '@/components/Sections/AboutVideo';
 import { SpaceSite } from '@/components/Pages/Home/SpaceSite';
