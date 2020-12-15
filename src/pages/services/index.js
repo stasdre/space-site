@@ -9,6 +9,7 @@ import { Collapse } from '@/components/Sections/Collapse';
 import { SubTitle } from '@/components/Sections/SubTitle';
 import { AboutVideo } from '@/components/Sections/AboutVideo';
 import { SpaceSite } from '@/components/Pages/Home/SpaceSite';
+import { ServiceDesc } from '@/components/Sections/ServiceDesc';
 
 const Services = ({ breadcrumbsItems, portfolio, spaceData, works, faq, links }) => {
   return (
@@ -40,6 +41,10 @@ const Services = ({ breadcrumbsItems, portfolio, spaceData, works, faq, links })
 
         <section className={styles.services__section}>
           <ContactsSection />
+        </section>
+
+        <section className={styles.services__section}>
+          <ServiceDesc />
         </section>
 
         <section className={styles.services__section}>
