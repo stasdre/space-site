@@ -217,13 +217,11 @@
 @keyframes backInDown {
   0% {
     top: -1200px;
-    //transform: translateY(-1200px) scale(0.7);
     opacity: 0.7;
   }
 
   80% {
     top: 0;
-    //transform: translateY(0px) scale(0.7);
     opacity: 0.7;
   }
 
