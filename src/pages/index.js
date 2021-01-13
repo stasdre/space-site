@@ -1,4 +1,5 @@
 import Head from 'next/head';
+
 import { ContactsSection, HeadSection } from '@/components/Layouts';
 
 import { Head as HeadPage } from '@/components/Pages/Home';
@@ -69,11 +70,8 @@ const Home = ({ title, spaceData, services, works, reviews, clients, faq }) => {
 export async function getStaticProps() {
   const title = '<span>Создание cайтов</span><br><span>от Google партнеров</span>';
 
-  const spaceData = {
-    title: 'Space Site — разработка сайтов от 690$',
-    desc:
-      'Создание сайтов — это необходимость для любого бизнеса в настоящее время. С помощью созданного сайта можно быстро продать 99% видов товаров и услуг. Создание сайта поможет получить горячих клиентов из поисковых систем и стабилизировать любой вид бизнеса.',
-  };
+  const spaceData =
+    'Создание сайтов — это необходимость для любого бизнеса в настоящее время. С помощью созданного сайта можно быстро продать 99% видов товаров и услуг. Создание сайта поможет получить горячих клиентов из поисковых систем и стабилизировать любой вид бизнеса.';
 
   const about = {
     title: 'Агенция',
@@ -95,17 +93,25 @@ export async function getStaticProps() {
     {
       id: 1,
       title: 'Converse',
-      img: 'work_1.jpg',
+      url: '#',
+      img: '/works/work_1.jpg',
       type: 'Интернет-магазин',
     },
     {
       id: 2,
       title: 'Zlata Ognevich',
-      img: 'work_2.jpg',
+      url: '#',
+      img: '/works/work_2.jpg',
       type: 'Корпоративный',
     },
-    { id: 3, title: 'EvaSad', img: 'work_3.jpg', type: 'Корпоративный' },
-    { id: 4, title: 'Novias', img: 'work_4.jpg', type: 'Интернет магазин' },
+    { id: 3, title: 'EvaSad', url: '#', img: '/works/work_3.jpg', type: 'Корпоративный' },
+    {
+      id: 4,
+      title: 'Novias',
+      url: '#',
+      img: '/works/work_4.jpg',
+      type: 'Интернет магазин',
+    },
   ];
 
   const reviews = [

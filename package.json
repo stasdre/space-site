@@ -11,6 +11,7 @@
     "@next/bundle-analyzer": "^10.0.3",
     "classnames": "^2.2.6",
     "next": "10.0.4",
+    "next-translate": "^1.0.1",
     "postcss-inline-svg": "^5.0.0",
     "react": "17.0.1",
     "react-collapsible": "^2.8.1",
