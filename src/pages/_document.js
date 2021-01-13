@@ -7,8 +7,10 @@ class MyDocument extends Document {
   }
 
   render() {
+    const { lang } = this.props;
+
     return (
-      <Html lang="ru">
+      <Html lang={lang}>
         <Head />
         <body>
           <Main />

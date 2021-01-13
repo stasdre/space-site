@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic';
+import Head from 'next/head';
 
 import { ContactsSection, HeadSection } from '@/components/Layouts';
 import { Breadcrumbs, Portfolio, PortfolioDesc, Links } from '@/components/Sections';
@@ -11,9 +11,13 @@ import { AboutVideo } from '@/components/Sections/AboutVideo';
 import { SpaceSite } from '@/components/Pages/Home/SpaceSite';
 import { ServiceDesc } from '@/components/Sections/ServiceDesc';
 
-const Services = ({ breadcrumbsItems, portfolio, spaceData, works, faq, links }) => {
+const Services = ({ breadcrumbsItems, portfolio, works, faq, links, service }) => {
   return (
     <>
+      <Head>
+        <title>{service.meta_title}</title>
+        <meta name="description" content={service.meta_desc}></meta>
+      </Head>
       <div className="container">
         <div className={styles.services__breadcrumbs}>
           <Breadcrumbs items={breadcrumbsItems} />
@@ -24,19 +28,13 @@ const Services = ({ breadcrumbsItems, portfolio, spaceData, works, faq, links })
       </div>
       <div className="container container__padding">
         <section className={`${styles.services__section}`}>
-          <SubTitle>
-            Интернет магазин — заказать создание интернет-магазина от Топ #1 SEO компании
-            в стране
-          </SubTitle>
+          <SubTitle>{service.h2}</SubTitle>
         </section>
         <section className={`${styles.services__section}`}>
-          <AboutVideo
-            title="Делаем магазины приносящие продажи с 1-го дня запуска сайта!"
-            src="/about_video.jpg"
-          />
+          <AboutVideo title={service.video_name} src="/about_video.jpg" />
         </section>
         <section className={`${styles.services__section}`}>
-          <SpaceSite data={spaceData} />
+          <SpaceSite data={service.description} />
         </section>
 
         <section className={styles.services__section}>
@@ -44,7 +42,7 @@ const Services = ({ breadcrumbsItems, portfolio, spaceData, works, faq, links })
         </section>
 
         <section className={styles.services__section}>
-          <ServiceDesc />
+          <ServiceDesc service={service} />
         </section>
 
         <section className={styles.services__section}>
@@ -66,11 +64,33 @@ const Services = ({ breadcrumbsItems, portfolio, spaceData, works, faq, links })
   );
 };
 
-export async function getStaticProps() {
-  const breadcrumbsItems = [{ name: 'Главная', link: '/' }, { name: 'Интернет-магазин' }];
+export async function getStaticPaths() {
+  const res = await fetch(`${process.env.API_URL}/api/services/paths`);
+  const { services } = await res.json();
+
+  const paths = services.map((item) => ({
+    params: {
+      services: encodeURI(item.url),
+    },
+    locale: item['Lang.code'],
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params, locale }) {
+  const res = await fetch(
+    `${process.env.API_URL}/api/services/${params.services}/${locale}`
+  );
+  const { service } = await res.json();
+
+  const breadcrumbsItems = [{ name: 'Главная', link: '/' }, { name: service.name }];
 
   const portfolio = {
-    title: 'Интернет-магазин который продает',
+    title: service.h1,
     previews: [
       { id: 1, img: '/portfolio/item_1.jpg', main: 1 },
       { id: 2, img: '/portfolio/item_2.jpg' },
@@ -114,22 +134,7 @@ export async function getStaticProps() {
     },
   ];
 
-  const works = [
-    {
-      id: 1,
-      title: 'Converse',
-      img: 'work_1.jpg',
-      type: 'Интернет-магазин',
-    },
-    {
-      id: 2,
-      title: 'Zlata Ognevich',
-      img: 'work_2.jpg',
-      type: 'Корпоративный',
-    },
-    { id: 3, title: 'EvaSad', img: 'work_3.jpg', type: 'Корпоративный' },
-    { id: 4, title: 'Novias', img: 'work_4.jpg', type: 'Интернет магазин' },
-  ];
+  const works = service.works;
 
   const faq = [
     {
@@ -191,12 +196,6 @@ export async function getStaticProps() {
     { id: 6, title: 'Быстрая выгрузка товаров через плагины ', link: '#' },
   ];
 
-  const spaceData = {
-    title: 'Space Site — разработка сайтов от 690$',
-    desc:
-      'Создание сайтов — это необходимость для любого бизнеса в настоящее время. С помощью созданного сайта можно быстро продать 99% видов товаров и услуг. Создание сайта поможет получить горячих клиентов из поисковых систем и стабилизировать любой вид бизнеса.',
-  };
-
   return {
     props: {
       breadcrumbsItems,
@@ -205,7 +204,7 @@ export async function getStaticProps() {
       works,
       faq,
       links,
-      spaceData,
+      service,
     },
   };
 }
