@@ -1,0 +1,21 @@
+.head {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.head__title {
+  font-size: 4.8rem;
+  line-height: 110%;
+  color: #ffffff;
+  padding: 3rem 0 3rem 0;
+
+  & span:first-child {
+    font-weight: 600;
+  }
+
+  & span:nth-child(3) {
+    font-weight: 300;
+    padding-left: 3.5rem;
+  }
+}
