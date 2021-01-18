@@ -70,7 +70,7 @@ export async function getStaticPaths() {
 
   const paths = services.map((item) => ({
     params: {
-      services: encodeURI(item.url),
+      services: item.url,
     },
     locale: item['Lang.code'],
   }));
