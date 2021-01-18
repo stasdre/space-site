@@ -83,7 +83,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params, locale }) {
   const res = await fetch(
-    `${process.env.API_URL}/api/services/${encodeURI(params.services)}/${locale}`
+    `${process.env.API_URL}/api/services/${params.services}/${locale}`
   );
   const { service } = await res.json();
 
