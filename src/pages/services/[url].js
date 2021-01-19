@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import lazySizes from 'lazysizes';
@@ -16,11 +17,26 @@ import { SpaceSite } from '@/components/Pages/Home/SpaceSite';
 import { ServiceDesc } from '@/components/Sections/ServiceDesc';
 
 const Services = ({ breadcrumbsItems, portfolio, works, faq, links, service }) => {
+  const { defaultLocale } = useRouter();
+
   return (
     <>
       <Head>
         <title>{service.meta_title}</title>
-        <meta name="description" content={service.meta_desc}></meta>
+        <meta name="description" content={service.meta_desc} />
+        <meta name="title" content={service.meta_title} />
+        {service.alternateURLs.map((item) => (
+          <link
+            key={item.url}
+            rel="alternate"
+            hreflang={item['Lang.code']}
+            href={
+              item['Lang.code'] !== defaultLocale
+                ? `/${item['Lang.code']}/${item.url}`
+                : item.url
+            }
+          />
+        ))}
       </Head>
       <div className="container">
         <div className={styles.services__breadcrumbs}>
