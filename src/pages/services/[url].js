@@ -1,4 +1,8 @@
 import Head from 'next/head';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import lazySizes from 'lazysizes';
+lazySizes.cfg.lazyClass = 'lazy';
 
 import { ContactsSection, HeadSection } from '@/components/Layouts';
 import { Breadcrumbs, Portfolio, PortfolioDesc, Links } from '@/components/Sections';
