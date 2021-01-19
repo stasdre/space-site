@@ -21,6 +21,14 @@ module.exports = withBundleAnalyzer(
           destination: '/uk/all-services',
           locale: false,
         },
+        {
+          source: '/agency',
+          destination: '/agency',
+        },
+        {
+          source: '/:url',
+          destination: '/services/:url',
+        },
       ];
     },
   })

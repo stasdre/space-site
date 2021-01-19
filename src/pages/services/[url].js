@@ -70,7 +70,7 @@ export async function getStaticPaths() {
 
   const paths = services.map((item) => ({
     params: {
-      services: item.url,
+      url: item.url,
     },
     locale: item['Lang.code'],
   }));
@@ -83,11 +83,14 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params, locale }) {
   const res = await fetch(
-    `${process.env.API_URL}/api/services/${encodeURI(params.services)}/${locale}`
+    `${process.env.API_URL}/api/services/${encodeURI(params.url)}/${locale}`
   );
   const { service } = await res.json();
 
-  const breadcrumbsItems = [{ name: 'Главная', link: '/' }, { name: service.name }];
+  const breadcrumbsItems = [
+    { name: 'Главная', link: '/' },
+    { name: service.name !== undefined ? service.name : '' },
+  ];
 
   const portfolio = {
     title: service.h1,
