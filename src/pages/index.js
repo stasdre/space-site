@@ -19,7 +19,13 @@ const Home = ({ title, spaceData, services, works, reviews, clients, faq }) => {
   return (
     <>
       <Head>
-        <title>Space site</title>
+        <title>
+          Создание сайтов, Киев — разработка сайта от Space Site | Харьков, Одесса, Днипро
+        </title>
+        <meta
+          name="description"
+          content="Создание сайта для бизнеса в Киеве. Разработка сайтов под заказ. Основано в 2013 году. Свой отдел маркетинга и видеопродакшн. 40+ специалистов в штате. Опытные программисты. Создать сайт в Space Site — правильно. Звоните!"
+        />
       </Head>
       <div className="container">
         <HeadSection>
