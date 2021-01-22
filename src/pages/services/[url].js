@@ -18,7 +18,6 @@ import { ServiceDesc } from '@/components/Sections/ServiceDesc';
 
 const Services = ({ breadcrumbsItems, portfolio, works, faq, links, service }) => {
   const { defaultLocale } = useRouter();
-
   return (
     <>
       <Head>
@@ -51,7 +50,11 @@ const Services = ({ breadcrumbsItems, portfolio, works, faq, links, service }) =
           <SubTitle>{service.h2}</SubTitle>
         </section>
         <section className={`${styles.services__section}`}>
-          <AboutVideo title={service.video_name} src="/about_video.jpg" />
+          <AboutVideo
+            title={service.video_name}
+            src={service.video_prev}
+            url={service.video_url}
+          />
         </section>
         <section className={`${styles.services__section}`}>
           <SpaceSite data={service.description} />
@@ -229,6 +232,7 @@ export async function getStaticProps({ params, locale }) {
       links,
       service,
     },
+    revalidate: 5,
   };
 }
 
