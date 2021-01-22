@@ -15,6 +15,7 @@ import { SubTitle } from '@/components/Sections/SubTitle';
 import { AboutVideo } from '@/components/Sections/AboutVideo';
 import { SpaceSite } from '@/components/Pages/Home/SpaceSite';
 import { ServiceDesc } from '@/components/Sections/ServiceDesc';
+import menu from '../../../nav';
 
 const Services = ({ breadcrumbsItems, portfolio, works, faq, links, service }) => {
   const { defaultLocale } = useRouter();
@@ -110,8 +111,14 @@ export async function getStaticProps({ params, locale }) {
   );
   const { service } = await res.json();
 
+  const navItemData = menu[locale].find((item) => item.uuid === 'services');
   const breadcrumbsItems = [
     { name: 'Главная', link: '/' },
+    {
+      name: navItemData.name,
+      link: navItemData.link,
+    },
+    { name: service.category, link: '#' },
     { name: service.name !== undefined ? service.name : '' },
   ];
 

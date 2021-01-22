@@ -1,31 +1,8 @@
 import { useRouter } from 'next/router';
-
 import Link from 'next/link';
-import styles from './Nav.module.css';
 
-const menu = {
-  ru: [
-    { name: 'Услуги', link: '/веб-услуги-цена' },
-    { name: 'Работы', link: '/works' },
-    { name: 'Агенция', link: '/agency' },
-    { name: 'Блог', link: '/blog' },
-    { name: 'Контакты', link: '/contacts' },
-  ],
-  uk: [
-    { name: 'Послуги', link: '/uk/веб-послуги-ціна' },
-    { name: 'Работы', link: '/works' },
-    { name: 'Агенция', link: '/agency' },
-    { name: 'Блог', link: '/blog' },
-    { name: 'Контакты', link: '/contacts' },
-  ],
-  en: [
-    { name: 'Services', link: '/en/services-prices' },
-    { name: 'Работы', link: '/works' },
-    { name: 'Агенция', link: '/agency' },
-    { name: 'Блог', link: '/blog' },
-    { name: 'Контакты', link: '/contacts' },
-  ],
-};
+import menu from '../../../../nav';
+import styles from './Nav.module.css';
 
 const Nav = () => {
   const { locale } = useRouter();
