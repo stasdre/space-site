@@ -22,8 +22,32 @@ module.exports = withBundleAnalyzer(
           locale: false,
         },
         {
+          source: '/portfolio/speis',
+          destination: '/works',
+        },
+        {
+          source: '/en/space-site/raboty-studii-eng',
+          destination: '/en/works',
+          locale: false,
+        },
+        {
+          source: encodeURI('/uk/space-site/portfolio'),
+          destination: '/uk/works',
+          locale: false,
+        },
+        {
           source: '/agency',
           destination: '/agency',
+        },
+        {
+          source: '/en/space-site/:url',
+          destination: '/en/portfolio/:url',
+          locale: false,
+        },
+        {
+          source: '/uk/space-site/:url',
+          destination: '/uk/portfolio/:url',
+          locale: false,
         },
         {
           source: '/:url',

@@ -2,7 +2,13 @@ import Link from 'next/link';
 
 import styles from './AnimatedButton.module.css';
 
-const AnimatedButton = ({ children, color = 'primary', type = 'button', link }) => {
+const AnimatedButton = ({
+  children,
+  color = 'primary',
+  type = 'button',
+  link,
+  ...props
+}) => {
   let themeButton;
   switch (color) {
     case 'gray':
@@ -21,7 +27,11 @@ const AnimatedButton = ({ children, color = 'primary', type = 'button', link }) 
     );
   }
 
-  return <button className={`${styles.button} ${themeButton}`}>{children}</button>;
+  return (
+    <button {...props} className={`${styles.button} ${themeButton}`}>
+      {children}
+    </button>
+  );
 };
 
 export default AnimatedButton;

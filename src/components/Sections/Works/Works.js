@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import WorkItem from './WorkItem';
 import { AnimatedButton } from '@/components/UI';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -32,17 +32,7 @@ const Works = ({ works }) => {
     <div className={styles.works}>
       <Slider {...settings} className={styles.works__list}>
         {works.map((work) => (
-          <div className={styles.works__item} key={work.id}>
-            <a href={work.url} className={styles.works__link}>
-              <Image src={work.img} width={582} height={723} />
-              <div className={styles.works__info}>
-                <div className={styles.works__top}>
-                  <div className={styles.works__title}>{work.type}</div>
-                </div>
-                <div className={styles.works__bottom}>{work.title}</div>
-              </div>
-            </a>
-          </div>
+          <WorkItem work={work} key={work['Work.id']} />
         ))}
       </Slider>
       <div className={styles.works__button}>

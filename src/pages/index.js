@@ -97,26 +97,32 @@ export async function getStaticProps() {
 
   const works = [
     {
-      id: 1,
-      title: 'Converse',
+      'Work.id': 1,
+      name: 'Converse',
       url: '#',
       img: '/works/work_1.jpg',
-      type: 'Интернет-магазин',
+      'Work.WorkType.name': 'Интернет-магазин',
     },
     {
-      id: 2,
-      title: 'Zlata Ognevich',
+      'Work.id': 2,
+      name: 'Zlata Ognevich',
       url: '#',
       img: '/works/work_2.jpg',
-      type: 'Корпоративный',
+      'Work.WorkType.name': 'Корпоративный',
     },
-    { id: 3, title: 'EvaSad', url: '#', img: '/works/work_3.jpg', type: 'Корпоративный' },
     {
-      id: 4,
-      title: 'Novias',
+      'Work.id': 3,
+      name: 'EvaSad',
+      url: '#',
+      img: '/works/work_3.jpg',
+      'Work.WorkType.name': 'Корпоративный',
+    },
+    {
+      'Work.id': 4,
+      name: 'Novias',
       url: '#',
       img: '/works/work_4.jpg',
-      type: 'Интернет магазин',
+      'Work.WorkType.name': 'Интернет магазин',
     },
   ];
 

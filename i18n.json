@@ -3,6 +3,7 @@
   "defaultLocale": "ru",
   "pages": {
     "*": ["common"],
-    "/all-services": ["service"]
+    "/all-services": ["service"],
+    "/works": ["works"]
   }
 }

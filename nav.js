@@ -1,6 +1,6 @@
 export const ru = [
   { uuid: 'services', name: 'Услуги', link: '/веб-услуги-цена' },
-  { uuid: 'works', name: 'Работы', link: '/works' },
+  { uuid: 'works', name: 'Портфолио', link: '/portfolio/speis' },
   { uuid: 'agency', name: 'Агенция', link: '/agency' },
   { uuid: 'blog', name: 'Блог', link: '/blog' },
   { uuid: 'contacts', name: 'Контакты', link: '/contacts' },
@@ -8,7 +8,7 @@ export const ru = [
 
 export const uk = [
   { uuid: 'services', name: 'Послуги', link: '/uk/веб-послуги-ціна' },
-  { uuid: 'works', name: 'Работы', link: '/works' },
+  { uuid: 'works', name: 'Портфоліо', link: '/uk/space-site/portfolio' },
   { uuid: 'agency', name: 'Агенция', link: '/agency' },
   { uuid: 'blog', name: 'Блог', link: '/blog' },
   { uuid: 'contacts', name: 'Контакты', link: '/contacts' },
@@ -16,7 +16,7 @@ export const uk = [
 
 export const en = [
   { uuid: 'services', name: 'Services', link: '/en/services-prices' },
-  { uuid: 'works', name: 'Работы', link: '/works' },
+  { uuid: 'works', name: 'Portfolio', link: '/en/space-site/raboty-studii-eng' },
   { uuid: 'agency', name: 'Агенция', link: '/agency' },
   { uuid: 'blog', name: 'Блог', link: '/blog' },
   { uuid: 'contacts', name: 'Контакты', link: '/contacts' },

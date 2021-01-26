@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from './Breadcrumbs.module.css';
 
 const Breadcrumbs = ({ items }) => {
-  if (!items.length) return null;
+  if (!items || items.length === 0) return null;
 
   return (
     <ul
@@ -28,7 +28,7 @@ const Breadcrumbs = ({ items }) => {
                   itemProp="item"
                   className={styles.breadcrumbs__link}
                 >
-                  <spna itemProp="name">{item.name}</spna>
+                  <span itemProp="name">{item.name}</span>
                 </a>
               </Link>
               <meta itemProp="position" content={index + 1} />
@@ -42,13 +42,13 @@ const Breadcrumbs = ({ items }) => {
                 itemProp="item"
                 className={styles.breadcrumbs__link}
               >
-                <spna itemProp="name">{item.name}</spna>
+                <span itemProp="name">{item.name}</span>
               </a>
               <meta itemProp="position" content={index + 1} />
             </>
           ) : (
             <>
-              <spna itemProp="name">{item.name}</spna>
+              <span itemProp="name">{item.name}</span>
               <meta itemProp="position" content={index + 1} />
             </>
           )}
