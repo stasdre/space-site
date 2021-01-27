@@ -239,7 +239,7 @@ export async function getStaticProps({ params, locale }) {
       links,
       service,
     },
-    revalidate: 5,
+    revalidate: 10,
   };
 }
 

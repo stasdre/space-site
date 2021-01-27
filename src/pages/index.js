@@ -250,6 +250,7 @@ export async function getStaticProps() {
       clients,
       faq,
     },
+    revalidate: 10,
   };
 }
 

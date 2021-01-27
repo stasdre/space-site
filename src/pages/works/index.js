@@ -45,6 +45,7 @@ export async function getStaticProps({ locale }) {
       breadcrumbsItems,
       apiUrl: process.env.SITE_URL,
     },
+    revalidate: 10,
   };
 }
 

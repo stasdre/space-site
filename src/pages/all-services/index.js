@@ -51,6 +51,7 @@ export async function getStaticProps({ locale }) {
       categories: data,
       breadcrumbsItems,
     },
+    revalidate: 10,
   };
 }
 

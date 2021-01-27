@@ -104,7 +104,7 @@ export async function getStaticProps({ params, locale }) {
       work,
       breadcrumbsItems,
     },
-    revalidate: 5,
+    revalidate: 10,
   };
 }
 export default Porfolio;
