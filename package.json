@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@kunukn/react-collapse": "^2.2.9",
     "@next/bundle-analyzer": "^10.0.3",
     "classnames": "^2.2.6",
     "lazysizes": "^5.3.0",

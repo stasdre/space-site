@@ -1,4 +1,6 @@
 {
   "author": "Анатолий Ситников",
-  "main": "Main"
+  "main": "Main",
+  "show": "Show more",
+  "hide": "Hide"
 }

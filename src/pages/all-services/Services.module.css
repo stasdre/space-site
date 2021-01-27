@@ -9,38 +9,6 @@
   }
 }
 
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
-  grid-gap: 30px;
-  margin-bottom: 7.5rem;
-}
-
-.services__title {
-  font-weight: 500;
-  font-size: 1.3rem;
-  line-height: 140%;
-  padding-bottom: 27px;
-  border-bottom: 1px solid #c4c4c4;
-  margin-bottom: 32px;
-}
-
-.services__list {
-  display: flex;
-  flex-direction: column;
-}
-
-.services__item {
-  margin-bottom: 20px;
-}
-
-.services__link {
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 170%;
-  color: #fff;
-}
-
 .services__contacts {
   margin-bottom: 7.5rem;
 }

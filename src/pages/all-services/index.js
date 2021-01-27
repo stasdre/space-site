@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import useTranslation from 'next-translate/useTranslation';
 import getT from 'next-translate/getT';
-import Link from 'next/link';
 
 import { ContactsSection, HeadSection } from '@/components/Layouts';
 import { Head as HeadPage } from '@/components/Pages/AllServices';
 import { Breadcrumbs } from '@/components/Sections';
+import { ServicesList } from '@/components/Sections/ServicesList';
 
 import styles from './Services.module.css';
 
@@ -31,22 +31,7 @@ const AllServices = ({ breadcrumbsItems, categories }) => {
         <HeadSection>
           <HeadPage title={t('title')} />
         </HeadSection>
-        <div className={styles.services}>
-          {categories.map((cat) => (
-            <div key={cat.id}>
-              <div className={styles.services__title}>{cat.name}</div>
-              <ul className={styles.services__list}>
-                {cat.services.map((serv) => (
-                  <li className={styles.services__item} key={serv['Service.id']}>
-                    <Link href={serv.url}>
-                      <a className={styles.services__link}>{serv.name}</a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+        <ServicesList initialItems={6} list={categories} />
         <section className={styles.services__contacts}>
           <ContactsSection />
         </section>
