@@ -5,12 +5,22 @@
 }
 
 .header__breadcrumbs {
-  margin-bottom: 124px;
+  margin-bottom: 3rem;
 }
 
 .header__title {
-  margin-bottom: 124px;
+  margin-bottom: 3rem;
   font-size: 4.8rem;
   line-height: 115%;
   color: #ffffff;
+}
+
+.header__time {
+  position: absolute;
+  right: 0;
+  bottom: 2rem;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 23px;
+  color: #737373;
 }

@@ -40,7 +40,7 @@ const ContactForm = () => (
           <Textarea placeholder="Детали проекта" />
         </div>
       </div>
-      <AnimatedButton color="gray">Отправить</AnimatedButton>
+      <AnimatedButton>Отправить</AnimatedButton>
     </div>
   </div>
 );

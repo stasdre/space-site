@@ -3,16 +3,8 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { ContactsSection, HeadSection } from '@/components/Layouts';
-import { Breadcrumbs, Portfolio, PortfolioDesc, Links } from '@/components/Sections';
-//import styles from './Services.module.css';
+import { Breadcrumbs } from '@/components/Sections';
 
-import { Works } from '@/components/Sections/Works';
-import { Collapse } from '@/components/Sections/Collapse';
-import { SubTitle } from '@/components/Sections/SubTitle';
-import { AboutVideo } from '@/components/Sections/AboutVideo';
-import { SpaceSite } from '@/components/Pages/Home/SpaceSite';
-import { ServiceDesc } from '@/components/Sections/ServiceDesc';
 import menu from '../../../nav';
 
 const Porfolio = ({ work, breadcrumbsItems }) => {
@@ -88,7 +80,6 @@ export async function getStaticProps({ params, locale }) {
     `${process.env.API_URL}/api/works/${encodeURI(params.url)}/${locale}`
   );
   const { work } = await res.json();
-  console.log(work);
   const navItemData = menu[locale].find((item) => item.uuid === 'works');
   const breadcrumbsItems = [
     { name: 'Главная', link: '/' },

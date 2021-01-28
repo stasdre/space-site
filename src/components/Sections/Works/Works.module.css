@@ -4,7 +4,7 @@
 }
 
 .works__list {
-  margin-bottom: 115px;
+  margin-bottom: 3rem;
   @media (--medium) {
     display: flex;
     flex-wrap: wrap;

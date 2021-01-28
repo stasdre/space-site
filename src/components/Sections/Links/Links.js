@@ -1,16 +1,16 @@
 import styles from './Links.module.css';
 
 const Links = ({ links }) => {
-  if (!links.length) return null;
+  if (!links || links.length === 0) return null;
 
   return (
     <ul className={styles.links__list}>
       {links.map((item, index) => (
         <li key={item.id} className={styles.links__item}>
-          <a className={styles.links__link} href={item.link}>
+          <div className={styles.links__link}>
             <span>{index + 1}</span>
             {item.title}
-          </a>
+          </div>
         </li>
       ))}
     </ul>

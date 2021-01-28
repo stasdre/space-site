@@ -1,12 +1,6 @@
-.services__breadcrumbs {
-  margin-bottom: 34px;
-}
-
-.services__section {
-  margin-bottom: 5rem;
-  @media (--extra-large) {
-    margin-bottom: 7.5rem;
-  }
+.service__list {
+  padding: 2rem 0 4rem 0;
+  margin-bottom: 4rem;
 }
 
 .services__contacts {

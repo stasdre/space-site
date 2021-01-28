@@ -1,8 +1,10 @@
+import { useRouter } from 'next/router';
 import WorkItem from './WorkItem';
 import { AnimatedButton } from '@/components/UI';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import menu from '../../../../nav';
 import styles from './Works.module.css';
 
 const settings = {
@@ -26,7 +28,11 @@ const settings = {
 };
 
 const Works = ({ works }) => {
-  if (!works.length) return null;
+  const { locale } = useRouter();
+
+  if (!works || works.length === 0) return null;
+
+  const navItemData = menu[locale].find((item) => item.uuid === 'works');
 
   return (
     <div className={styles.works}>
@@ -36,7 +42,7 @@ const Works = ({ works }) => {
         ))}
       </Slider>
       <div className={styles.works__button}>
-        <AnimatedButton type="link" link="/works">
+        <AnimatedButton type="link" link={navItemData.link}>
           Смотреть все
         </AnimatedButton>
       </div>

@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import styles from './ServiceDesc.module.css';
+import { Links } from '@/components/Sections';
 
-const costs = [
-  { id: 1, name: 'Лучшая цена', price: '$1111' },
-  { id: 2, name: 'Лучшая цена', price: '$1111' },
-  { id: 3, name: 'Лучшая цена', price: '$1111' },
-];
+import styles from './ServiceDesc.module.css';
 
 const ServiceDesc = ({ service }) => {
   const [activeTab, setActiveTab] = useState(1);
@@ -64,8 +60,13 @@ const ServiceDesc = ({ service }) => {
             [styles.tabs__desc]: true,
             [styles.tabs__pane_active]: activeTab === 1,
           })}
-          dangerouslySetInnerHTML={{ __html: service.desc }}
-        />
+        >
+          <div
+            className={styles.tabs__desc_content}
+            dangerouslySetInnerHTML={{ __html: service.desc }}
+          />
+          <Links links={service.links} />
+        </div>
         <div
           id="tab2"
           className={classNames({

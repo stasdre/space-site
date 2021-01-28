@@ -1,23 +1,23 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import getT from 'next-translate/getT';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import lazySizes from 'lazysizes';
 lazySizes.cfg.lazyClass = 'lazy';
 
-import { ContactsSection, HeadSection } from '@/components/Layouts';
-import { Breadcrumbs, Portfolio, PortfolioDesc, Links } from '@/components/Sections';
+import { ContactsSection } from '@/components/Layouts';
 import styles from './Services.module.css';
 
 import { Works } from '@/components/Sections/Works';
-import { Collapse } from '@/components/Sections/Collapse';
 import { SubTitle } from '@/components/Sections/SubTitle';
 import { AboutVideo } from '@/components/Sections/AboutVideo';
 import { SpaceSite } from '@/components/Pages/Home/SpaceSite';
 import { ServiceDesc } from '@/components/Sections/ServiceDesc';
+import { PageHeader } from '@/components/UI/PageHeader';
 import menu from '../../../nav';
 
-const Services = ({ breadcrumbsItems, portfolio, works, links, service }) => {
+const Services = ({ breadcrumbsItems, service }) => {
   const { defaultLocale } = useRouter();
   return (
     <>
@@ -39,47 +39,49 @@ const Services = ({ breadcrumbsItems, portfolio, works, links, service }) => {
         ))}
       </Head>
       <div className="container">
-        <div className={styles.services__breadcrumbs}>
-          <Breadcrumbs items={breadcrumbsItems} />
+        <PageHeader title={service.h1} breadcrumbs={breadcrumbsItems} />
+      </div>
+      <section className={`container container__padding ${styles.service__section}`}>
+        <div className="bordered-container">
+          <h2 className={styles.service__title}>{service.h2}</h2>
+
+          {service.video_url && (
+            <div className={styles.service__video}>
+              <AboutVideo
+                title={service.video_name}
+                src={service.video_prev}
+                url={service.video_url}
+              />
+            </div>
+          )}
+
+          {service.description && (
+            <div className={styles.service__desc}>
+              <SpaceSite data={service.description} />
+            </div>
+          )}
+          <div className={styles.service__form}>
+            <ContactsSection />
+          </div>
         </div>
-        <HeadSection showTime>
-          <Portfolio data={portfolio} />
-        </HeadSection>
-      </div>
-      <div className="container container__padding">
-        <section className={`${styles.services__section}`}>
-          <SubTitle>{service.h2}</SubTitle>
-        </section>
-        <section className={`${styles.services__section}`}>
-          <AboutVideo
-            title={service.video_name}
-            src={service.video_prev}
-            url={service.video_url}
-          />
-        </section>
-        <section className={`${styles.services__section}`}>
-          <SpaceSite data={service.description} />
-        </section>
 
-        <section className={styles.services__section}>
-          <ContactsSection />
-        </section>
-
-        <section className={styles.services__section}>
+        <div className={`bordered-container ${styles.service__content}`}>
           <ServiceDesc service={service} />
-        </section>
+        </div>
 
-        <section className={styles.services__section}>
-          <Links links={links} />
-        </section>
-        <section className={styles.services__section}>
-          <div className="section__title">Работы</div>
-          <Works works={works} />
-        </section>
-        <section className={styles.services__section}>
+        {service.works.length !== 0 && (
+          <div className={`bordered-container`}>
+            <div className={styles.service__works}>
+              <div className="section__title">Работы</div>
+              <Works works={service.works} />
+            </div>
+          </div>
+        )}
+
+        <div className={styles.service__form_bottom}>
           <ContactsSection />
-        </section>
-      </div>
+        </div>
+      </section>
     </>
   );
 };
@@ -102,6 +104,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, locale }) {
+  const tC = await getT(locale, 'common');
   const res = await fetch(
     `${process.env.API_URL}/api/services/${encodeURI(params.url)}/${locale}`
   );
@@ -109,7 +112,7 @@ export async function getStaticProps({ params, locale }) {
 
   const navItemData = menu[locale].find((item) => item.uuid === 'services');
   const breadcrumbsItems = [
-    { name: 'Главная', link: '/' },
+    { name: tC('main'), link: '/' },
     {
       name: navItemData.name,
       link: navItemData.link,
@@ -118,69 +121,18 @@ export async function getStaticProps({ params, locale }) {
     { name: service.name !== undefined ? service.name : '' },
   ];
 
-  const portfolio = {
-    title: service.h1,
-    previews: [
-      { id: 1, img: '/portfolio/item_1.jpg', main: 1 },
-      { id: 2, img: '/portfolio/item_2.jpg' },
-      { id: 3, img: '/portfolio/item_3.jpg' },
-      { id: 4, img: '/portfolio/item_4.jpg' },
-    ],
-  };
-
-  const clients = [
-    {
-      id: 1,
-      img: 'client_1.png',
-    },
-    {
-      id: 2,
-      img: 'client_2.png',
-    },
-    {
-      id: 3,
-      img: 'client_3.png',
-    },
-    {
-      id: 4,
-      img: 'client_4.png',
-    },
-    {
-      id: 5,
-      img: 'client_5.png',
-    },
-    {
-      id: 6,
-      img: 'client_6.png',
-    },
-    {
-      id: 7,
-      img: 'client_7.png',
-    },
-    {
-      id: 8,
-      img: 'client_8.png',
-    },
-  ];
-
-  const works = service.works;
-
-  const links = [
-    { id: 1, title: 'Интернет-магазин, который продает', link: '#' },
-    { id: 2, title: 'Современный продающий дизайн', link: '#' },
-    { id: 3, title: 'Быстрая выгрузка товаров через плагины ', link: '#' },
-    { id: 4, title: 'Интернет-магазин, который продает', link: '#' },
-    { id: 5, title: 'Современный продающий дизайн', link: '#' },
-    { id: 6, title: 'Быстрая выгрузка товаров через плагины ', link: '#' },
+  service.links = [
+    { id: 1, title: 'Интернет-магазин, который продает' },
+    { id: 2, title: 'Современный продающий дизайн' },
+    { id: 3, title: 'Быстрая выгрузка товаров через плагины' },
+    { id: 4, title: 'Интернет-магазин, который продает' },
+    { id: 5, title: 'Современный продающий дизайн' },
+    { id: 6, title: 'Быстрая выгрузка товаров через плагины' },
   ];
 
   return {
     props: {
       breadcrumbsItems,
-      portfolio,
-      clients,
-      works,
-      links,
       service,
     },
     revalidate: 10,

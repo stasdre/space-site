@@ -1,3 +1,47 @@
-.services__breadcrumbs {
-  margin-bottom: 93px;
+.service__section {
+  position: relative;
+  /* &::after {
+    position: absolute;
+    top: 0;
+    left: -14vw;
+    content: '';
+    display: block;
+    width: 768px;
+    height: 994px;
+    background: svg-load('section-elipse.svg') no-repeat;
+  } */
+  padding-top: 3rem;
+}
+
+.service__title {
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 140%;
+  color: #ffffff;
+  margin-bottom: 4rem;
+}
+
+.service__video {
+  margin-bottom: 4rem;
+}
+
+.service__desc {
+  margin-bottom: 4rem;
+}
+
+.service__form {
+  margin-bottom: 4rem;
+}
+
+.service__content {
+  padding: 4rem 0;
+  margin-bottom: 4rem;
+}
+
+.service__works {
+  margin-bottom: 4rem;
+}
+
+.service__form_bottom {
+  padding: 4rem 0;
 }
