@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import WorkItem from './WorkItem';
 import { AnimatedButton } from '@/components/UI';
+import NProgress from 'nprogress'; //nprogress module
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -12,8 +13,10 @@ const WorksLoaded = ({ initialData, link }) => {
   const countItems = 6;
 
   const showMore = async () => {
+    NProgress.start();
     const res = await fetch(`${link}/${page}`);
     const { data } = await res.json();
+    NProgress.done();
     if (data && data.length) {
       setWorks([...works, ...data]);
       setPage(page + 1);

@@ -1,11 +1,18 @@
 import Head from 'next/head';
+import Router from 'next/router';
 import useTranslation from 'next-translate/useTranslation';
+import NProgress from 'nprogress'; //nprogress module
+import 'nprogress/nprogress.css';
 
 import { Header, Footer } from '@/components/Layouts';
 import '@/css/main.css';
 
+Router.events.on('routeChangeStart', () => NProgress.start());
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
+
 function MyApp({ Component, pageProps }) {
-  const { t, lang } = useTranslation('common');
+  const { t } = useTranslation('common');
   return (
     <>
       <Head>

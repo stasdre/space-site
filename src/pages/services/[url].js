@@ -10,7 +10,6 @@ import { ContactsSection } from '@/components/Layouts';
 import styles from './Services.module.css';
 
 import { Works } from '@/components/Sections/Works';
-import { SubTitle } from '@/components/Sections/SubTitle';
 import { AboutVideo } from '@/components/Sections/AboutVideo';
 import { SpaceSite } from '@/components/Pages/Home/SpaceSite';
 import { ServiceDesc } from '@/components/Sections/ServiceDesc';
