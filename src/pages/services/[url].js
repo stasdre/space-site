@@ -28,7 +28,7 @@ const Services = ({ breadcrumbsItems, service }) => {
           <link
             key={item.url}
             rel="alternate"
-            hreflang={item['Lang.code']}
+            hrefLang={item['Lang.code']}
             href={
               item['Lang.code'] !== defaultLocale
                 ? `/${item['Lang.code']}/${item.url}`

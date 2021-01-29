@@ -17,7 +17,7 @@ const Head = ({ title }) => {
         <div className={styles.head__click}>Свяжитесь с нами в 1 клик:</div>
         <Social links={socials} />
       </div>
-      <div className={styles.head__planet}></div>
+      {/* <div className={styles.head__planet}></div> */}
     </div>
   );
 };

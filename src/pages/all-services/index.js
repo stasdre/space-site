@@ -16,9 +16,9 @@ const AllServices = ({ breadcrumbsItems, categories }) => {
         <title>{t('meta_title')}</title>
         <meta name="description" content={t('meta_desc')} />
         <meta name="title" content={t('meta_title')} />
-        <link rel="alternate" hreflang="uk" href="/uk/веб-послуги-ціна" />
-        <link rel="alternate" hreflang="en" href="/en/services-prices" />
-        <link rel="alternate" hreflang="ru" href="/веб-услуги-цена" />
+        <link rel="alternate" hrefLang="uk" href="/uk/веб-послуги-ціна" />
+        <link rel="alternate" hrefLang="en" href="/en/services-prices" />
+        <link rel="alternate" hrefLang="ru" href="/веб-услуги-цена" />
       </Head>
 
       <div className="container">

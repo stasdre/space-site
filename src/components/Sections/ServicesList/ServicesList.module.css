@@ -5,6 +5,10 @@
   row-gap: 4vw;
 }
 
+.services_col_3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .services__title {
   font-weight: 500;
   font-size: 1.3rem;

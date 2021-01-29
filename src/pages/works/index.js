@@ -18,9 +18,9 @@ const Works = ({ data, breadcrumbsItems, apiUrl }) => {
         <title>{t('meta_title')}</title>
         <meta name="description" content={t('meta_desc')} />
         <meta name="title" content={t('meta_title')} />
-        <link rel="alternate" hreflang="ru" href="/space-site/raboty-studii" />
-        <link rel="alternate" hreflang="en" href="/en/space-site/raboty-studii-eng" />
-        <link rel="alternate" hreflang="uk" href="/uk/space-site/portfolio" />
+        <link rel="alternate" hrefLang="ru" href="/space-site/raboty-studii" />
+        <link rel="alternate" hrefLang="en" href="/en/space-site/raboty-studii-eng" />
+        <link rel="alternate" hrefLang="uk" href="/uk/space-site/portfolio" />
       </Head>
       <div className="container">
         <PageHeader title={t('title')} breadcrumbs={breadcrumbsItems} />

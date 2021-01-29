@@ -33,11 +33,6 @@ const Header = () => {
                   <PhoneIcon />
                 </Button>
               </li>
-              <li className={`${styles.header__controls_item} ${styles.header__play}`}>
-                <Button round type="base">
-                  <PlayIcon />
-                </Button>
-              </li>
             </ul>
             <div className={styles.header__btn}>
               <Button type="base">Нанять нас</Button>

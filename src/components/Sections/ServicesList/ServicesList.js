@@ -1,10 +1,11 @@
+import classNames from 'classnames';
 import CategoriesList from './CategoriesList';
 import styles from './ServicesList.module.css';
 
-const ServicesList = ({ initialItems, list }) => {
+const ServicesList = ({ initialItems, list, cols }) => {
   const initCat = list.map((item) => ({
     ...item,
-    services: item.services.slice(0, initialItems),
+    services: item.services.length ? item.services.slice(0, initialItems) : [],
   }));
 
   const aditional = {};
@@ -15,7 +16,12 @@ const ServicesList = ({ initialItems, list }) => {
   }
 
   return (
-    <div className={styles.services}>
+    <div
+      className={classNames({
+        [styles.services]: true,
+        [styles.services_col_3]: cols === 3,
+      })}
+    >
       {initCat.map((cat) => (
         <CategoriesList
           key={cat.id}

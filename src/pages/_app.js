@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <base href={process.env.SITE_URL} />
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="content-type" content="text/html; charset=utf-8" />
         <meta
           name="keywordlinks-verification"
           content={process.env.KEYWORD_VERIFICATION}

@@ -22,7 +22,7 @@ const Porfolio = ({ work, breadcrumbsItems }) => {
             <link
               key={item.url}
               rel="alternate"
-              hreflang={item['Lang.code']}
+              hrefLang={item['Lang.code']}
               href={
                 item['Lang.code'] !== defaultLocale
                   ? `/${item['Lang.code']}/space-site/${item.url}`
