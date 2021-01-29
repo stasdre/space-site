@@ -16,7 +16,7 @@ import { SpaceSite } from '@/components/Pages/Home/SpaceSite';
 import { SubTitle } from '@/components/Sections/SubTitle';
 import { AboutVideo } from '@/components/Sections/AboutVideo';
 
-const Home = ({ title, spaceData, services, works, reviews, clients, faq }) => {
+const Home = ({ title, spaceData, services, works, reviews, clients, faq, locale }) => {
   const { t } = useTranslation('main');
   return (
     <>
@@ -80,7 +80,7 @@ export async function getStaticProps({ locale }) {
   const res = await fetch(`${process.env.API_URL}/api/categories/services/${locale}`);
   const { data } = await res.json();
 
-  const title = `<span>${t('title')}</span><br><span>${t('title_2')}</span>`;
+  const title = `<span>${t('title')} </span><br><span>${t('title_2')}</span>`;
 
   const spaceData = `<h2>${t('about_title')}</h2><br/><p>${t('about_text')}</p>`;
 
