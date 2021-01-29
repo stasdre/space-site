@@ -4,6 +4,7 @@
   "pages": {
     "*": ["common"],
     "/all-services": ["service"],
-    "/works": ["works"]
+    "/works": ["works"],
+    "/": ["main"]
   }
 }
