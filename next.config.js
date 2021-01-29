@@ -50,8 +50,34 @@ module.exports = withBundleAnalyzer(
           locale: false,
         },
         {
+          source: '/en/website-creation',
+          destination: '/en/',
+          locale: false,
+        },
+        {
+          source: encodeURI('/uk/створення-сайтів'),
+          destination: '/uk/',
+          locale: false,
+        },
+        {
           source: '/:url',
           destination: '/services/:url',
+        },
+      ];
+    },
+    async redirects() {
+      return [
+        {
+          source: '/en',
+          destination: '/en/website-creation',
+          locale: false,
+          permanent: true,
+        },
+        {
+          source: '/uk',
+          destination: '/uk/створення-сайтів',
+          locale: false,
+          permanent: true,
         },
       ];
     },

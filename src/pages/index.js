@@ -1,5 +1,6 @@
 import Head from 'next/head';
-
+import useTranslation from 'next-translate/useTranslation';
+import getT from 'next-translate/getT';
 import { ContactsSection, HeadSection } from '@/components/Layouts';
 
 import { Head as HeadPage } from '@/components/Pages/Home';
@@ -7,7 +8,7 @@ import { Head as HeadPage } from '@/components/Pages/Home';
 import styles from './Index.module.css';
 
 import { Reviews } from '@/components/Sections/Reviews';
-import { Services } from '@/components/Sections/Services';
+import { ServicesList } from '@/components/Sections/ServicesList';
 import { Works } from '@/components/Sections/Works';
 import { Clients } from '@/components/Sections/Clients';
 import { Collapse } from '@/components/Sections/Collapse';
@@ -16,16 +17,16 @@ import { SubTitle } from '@/components/Sections/SubTitle';
 import { AboutVideo } from '@/components/Sections/AboutVideo';
 
 const Home = ({ title, spaceData, services, works, reviews, clients, faq }) => {
+  const { t } = useTranslation('main');
   return (
     <>
       <Head>
-        <title>
-          Создание сайтов, Киев — разработка сайта от Space Site | Харьков, Одесса, Днипро
-        </title>
-        <meta
-          name="description"
-          content="Создание сайта для бизнеса в Киеве. Разработка сайтов под заказ. Основано в 2013 году. Свой отдел маркетинга и видеопродакшн. 40+ специалистов в штате. Опытные программисты. Создать сайт в Space Site — правильно. Звоните!"
-        />
+        <title>{t('meta_title')}</title>
+        <meta name="description" content={t('meta_desc')} />
+        <meta name="title" content={t('meta_title')} />
+        <link rel="alternate" hrefLang="uk" href="/uk/створення-сайтів" />
+        <link rel="alternate" hrefLang="en" href="/en/website-creation" />
+        <link rel="alternate" hrefLang="ru" href="/" />
       </Head>
       <div className="container">
         <HeadSection>
@@ -34,20 +35,21 @@ const Home = ({ title, spaceData, services, works, reviews, clients, faq }) => {
       </div>
       <div className={`container container__padding`}>
         <section className={styles.main__section}>
-          <SubTitle>
-            Создание прибыльных продающих сайтов для бизнеса под ключ с гарантией
-            результата.
-          </SubTitle>
+          <SubTitle>{t('sub_title')}</SubTitle>
         </section>
         <section className={styles.main__section}>
-          <AboutVideo title="О компании за 52 секунды" src="/about_video.jpg" />
+          <AboutVideo
+            title={t('about')}
+            src="/about_video.jpg"
+            url="https://www.youtube.com/embed/Vi6DY5b3yBI"
+          />
         </section>
         <section className={styles.main__section}>
           <SpaceSite data={spaceData} />
         </section>
         <section className={styles.main__section}>
           <div className="section__title">Услуги</div>
-          <Services services={services} />
+          <ServicesList initialItems={0} list={services} cols={3} />
         </section>
         <section className={styles.main__section}>
           <div className="section__title">Работы</div>
@@ -73,27 +75,16 @@ const Home = ({ title, spaceData, services, works, reviews, clients, faq }) => {
   );
 };
 
-export async function getStaticProps() {
-  const title = '<span>Создание cайтов</span><br><span>от Google партнеров</span>';
+export async function getStaticProps({ locale }) {
+  const t = await getT(locale, 'main');
+  const res = await fetch(`${process.env.API_URL}/api/categories/services/${locale}`);
+  const { data } = await res.json();
 
-  const spaceData =
-    'Создание сайтов — это необходимость для любого бизнеса в настоящее время. С помощью созданного сайта можно быстро продать 99% видов товаров и услуг. Создание сайта поможет получить горячих клиентов из поисковых систем и стабилизировать любой вид бизнеса.';
+  const title = `<span>${t('title')}</span><br><span>${t('title_2')}</span>`;
 
-  const about = {
-    title: 'Агенция',
-    desc:
-      'Занимаемся разработкой сайтов для бизнеса с 2013 года. За это время подобрали квалифицированных специалистов, которые готовы помочь клиентам в создании сайта любой сложности, а также внедрить в него все необходимые функции для высокой эффективности и результативности ведения вашего бизнеса.',
-    link: '#',
-  };
+  const spaceData = `<h2>${t('about_title')}</h2><br/><p>${t('about_text')}</p>`;
 
-  const services = [
-    { id: 1, title: 'Создание сайтов', link: '#' },
-    { id: 2, title: 'Верстка сайтов', link: '#' },
-    { id: 3, title: 'Разработка на CMS', link: '#' },
-    { id: 4, title: 'Веб-дизайн', link: '#' },
-    { id: 5, title: 'Поддерка сайта', link: '#' },
-    { id: 6, title: 'Мобильное приложение', link: '#' },
-  ];
+  const services = data;
 
   const works = [
     {
@@ -243,7 +234,6 @@ export async function getStaticProps() {
     props: {
       title,
       spaceData,
-      about,
       services,
       works,
       reviews,
